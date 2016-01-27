@@ -10,6 +10,8 @@ originr - Species Origin Data
 }
 \author{
 Scott Chamberlain \email{myrmecocystus@gmail.com}
+
+Ignasi Bartomeus \email{nacho.bartomeus@gmail.com}
 }
 \keyword{package}
 

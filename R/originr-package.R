@@ -9,6 +9,7 @@
 #' @name originr-package
 #' @aliases originr
 #' @docType package
-#' @author Scott Chamberlain \email{myrmecocystus@@gmail.com}
 #' @keywords package
+#' @author Scott Chamberlain \email{myrmecocystus@@gmail.com}
+#' @author Ignasi Bartomeus \email{nacho.bartomeus@@gmail.com}
 NULL
