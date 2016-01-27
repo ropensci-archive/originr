@@ -93,7 +93,7 @@ eol_invasive_ <- function(name = NULL, dataset="all", searchby = grep, page=NULL
            mineps = 55331)
   url = 'http://eol.org/api/collections/1.0.json'
 
-  args <- traitsc(list(id = datasetid, page = page, per_page = 500, filter = 'taxa'))
+  args <- orc(list(id = datasetid, page = page, per_page = 500, filter = 'taxa'))
   tt <- GET(url, query = args, ...)
   stop_for_status(tt)
   res <- jsonlite::fromJSON(content(tt, "text"), FALSE)
@@ -112,13 +112,13 @@ eol_invasive_ <- function(name = NULL, dataset="all", searchby = grep, page=NULL
   if (!is.null(pages_get)) {
     out <- list()
     for (i in seq_along(pages_get)) {
-      args <- traitsc(list(id = datasetid, page = pages_get[i], per_page = 500, filter = 'taxa'))
+      args <- orc(list(id = datasetid, page = pages_get[i], per_page = 500, filter = 'taxa'))
       tt <- GET(url, query = args, ...)
       stop_for_status(tt)
       res <- jsonlite::fromJSON(content(tt, "text"), FALSE)
       out[[i]] <- res$collection_items
     }
-    res2 <- traitsc(out)
+    res2 <- orc(out)
     dat_all <- do.call(c, list(data_init, do.call(c, res2)))
     dat_all <- lapply(dat_all, "[", c("name","object_id"))
     dat <- do.call(rbind, lapply(dat_all, data.frame, stringsAsFactors = FALSE))
