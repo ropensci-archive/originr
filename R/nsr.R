@@ -27,14 +27,14 @@ nsr <- function(species, country, stateprovince = NULL, countyparish = NULL, ...
     x <- nsr_GET(nsr_base(), args, ...)
     orc(x)
   })
-  df <- rbindlist(tmp, fill = TRUE, use.names = TRUE)
-  (df <- setDF(df))
+  df <- data.table::rbindlist(tmp, fill = TRUE, use.names = TRUE)
+  (df <- data.table::setDF(df))
 }
 
 nsr_GET <- function(url, args, ...) {
-  x <- GET(url, query = args, ...)
-  stop_for_status(x)
-  xx <- jsonlite::fromJSON(content(x, "text"), FALSE)$nsr_results
+  x <- httr::GET(url, query = args, ...)
+  httr::stop_for_status(x)
+  xx <- jsonlite::fromJSON(httr::content(x, "text"), FALSE)$nsr_results
   if (length(xx) == 0) NULL else xx[[1]]$nsr_result
 }
 

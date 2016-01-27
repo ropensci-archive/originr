@@ -77,8 +77,7 @@
 #' eol_invasive_(name=c('Lymantria dispar','Cygnus olor','Hydrilla verticillata','Pinus concolor'),
 #'    dataset='gisd', count = TRUE)
 #' }
-
-eol_invasive_ <- function(name = NULL, dataset="all", searchby = grep, page=NULL,
+eol <- function(name = NULL, dataset="all", searchby = grep, page=NULL,
   per_page=NULL, key = NULL, verbose=TRUE, count=FALSE, ...) {
 
   if (is.null(name)) stop("please provide a taxonomic name")
@@ -94,9 +93,9 @@ eol_invasive_ <- function(name = NULL, dataset="all", searchby = grep, page=NULL
   url = 'http://eol.org/api/collections/1.0.json'
 
   args <- orc(list(id = datasetid, page = page, per_page = 500, filter = 'taxa'))
-  tt <- GET(url, query = args, ...)
-  stop_for_status(tt)
-  res <- jsonlite::fromJSON(content(tt, "text"), FALSE)
+  tt <- httr::GET(url, query = args, ...)
+  httr::stop_for_status(tt)
+  res <- jsonlite::fromJSON(httr::content(tt, "text"), FALSE)
   data_init <- res$collection_items
   mssg(verbose, sprintf("Getting data for %s names...", res$total_items))
 
@@ -113,9 +112,9 @@ eol_invasive_ <- function(name = NULL, dataset="all", searchby = grep, page=NULL
     out <- list()
     for (i in seq_along(pages_get)) {
       args <- orc(list(id = datasetid, page = pages_get[i], per_page = 500, filter = 'taxa'))
-      tt <- GET(url, query = args, ...)
-      stop_for_status(tt)
-      res <- jsonlite::fromJSON(content(tt, "text"), FALSE)
+      tt <- httr::GET(url, query = args, ...)
+      httr::stop_for_status(tt)
+      res <- jsonlite::fromJSON(httr::content(tt, "text"), FALSE)
       out[[i]] <- res$collection_items
     }
     res2 <- orc(out)

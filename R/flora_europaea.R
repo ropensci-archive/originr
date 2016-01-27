@@ -1,4 +1,4 @@
-#' Check species status (native, exotic, ...) for one species from Flora Europaea webpage
+#' Check species status (native/exotic) in Flora Europaea
 #'
 #' @export
 #'
@@ -26,12 +26,11 @@
 #' @examples \dontrun{
 #' sp <- c("Lavandula stoechas", "Carpobrotus edulis", "Rhododendron ponticum",
 #'        "Alkanna lutea", "Anchusa arvensis")
-#' fe_native(sp[1])
-#' sapply(sp, fe_native, simplify = FALSE)
+#' flora_europaea(sp[1])
+#' sapply(sp, flora_europaea, simplify = FALSE)
 #' }
 #'
-
-fe_native <- function(sp, ...) {
+flora_europaea <- function(sp, ...) {
   #reformat sp list
   genus <- strsplit(sp, " ")[[1]][1]
   species <- strsplit(sp, " ")[[1]][2]

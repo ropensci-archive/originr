@@ -28,21 +28,19 @@
 #' The database is also able to recognize a lot (but not all) of the species
 #' synonyms.
 #'
-#' Note that \code{eol_invasive} with source of gisd or gisd100 may end up with different results
-#' as this function goes directly to the GISD website, whereas eol_invasive only updates their
-#' GISD data occassionally. See notes in \code{eol_invasive}.
+#' Note that \code{eol_invasive} with source of gisd or gisd100 may end up with
+#' different results as this function goes directly to the GISD website, whereas
+#' eol_invasive only updates their GISD data occassionally. See notes in
+#' \code{eol_invasive}.
 #'
 #' @author Ignasi Bartomeus \email{nacho.bartomeus@@gmail.com}
 #' @examples \dontrun{
 #' sp <- c("Carpobrotus edulis", "Rosmarinus officinalis")
 #' ## first species is invasive, second one is not.
-#' g_invasive(sp)
-#' g_invasive(sp, simplify = TRUE)
+#' gisd(sp)
+#' gisd(sp, simplify = TRUE)
 #' }
-#'
-
-g_invasive <- function(x, simplify = FALSE, verbose=TRUE)
-{
+gisd <- function(x, simplify = FALSE, verbose=TRUE) {
 	species <- gsub(" ", "+", x) # reformat sp list
 	# create urls to parse
 	urls <- paste("http://www.issg.org/database/species/search.asp?sts=sss&st=sss&fr=1&x=13&y=9&sn=",

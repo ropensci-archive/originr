@@ -34,7 +34,7 @@ A data.frame, with species name and result of origin check
 This function check the status (native or exotic) of a species in a
 given place
 
-For that end, calls \code{\link[taxize]{itis_native}} and \code{\link{fe_native}}.
+For that end, calls \code{\link[taxize]{itis_native}} and \code{\link{flora_europaea}}.
 See help documentation of those functions for details.
 
 So many more things can be done, like checking species first with \pkg{taxize}, adding

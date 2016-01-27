@@ -23,7 +23,7 @@
 #' @description This function check the status (native or exotic) of a species in a
 #' given place
 #'
-#' For that end, calls \code{\link[taxize]{itis_native}} and \code{\link{fe_native}}.
+#' For that end, calls \code{\link[taxize]{itis_native}} and \code{\link{flora_europaea}}.
 #' See help documentation of those functions for details.
 #'
 #' So many more things can be done, like checking species first with \pkg{taxize}, adding
@@ -55,11 +55,11 @@ is_native <- function(sp, where, region = c("america", "europe"), ...) {
                       "Hawaii", "Mexico")) {
       stop("where must be one America region, see help for accepted names", call. = FALSE)
     }
-    tsn_ <- get_tsn(searchterm = sp, ...)[1]
+    tsn_ <- taxize::get_tsn(searchterm = sp, ...)[1]
     if (is.na(tsn_)) {
       Out <- "species not in itis"
     } else {
-      origin <- itis_native(tsn = tsn_, ...)
+      origin <- taxize::itis_native(tsn = tsn_, ...)
       Out <- as.character(origin[which(origin$jurisdictionvalue == where), "origin"])
     }
   }
@@ -78,7 +78,7 @@ is_native <- function(sp, where, region = c("america", "europe"), ...) {
                       "USSRSouth_eastern_Division")) {
       stop("where must be one eu country, see help for accepted names", call. = FALSE)
     }
-    origin <- fe_native(sp)
+    origin <- flora_europaea(sp)
     if (length(origin) < 5) {
       Out <- "Species not in flora europaea"
     } else {
