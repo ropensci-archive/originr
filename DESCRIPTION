@@ -2,7 +2,7 @@ Package: originr
 Type: Package
 Title: Species Origin Data
 Description: Get species origin data. And stuff.
-Version: 0.0.2.9000
+Version: 0.0.2.9100
 Authors@R: c(person("Scott", "Chamberlain", role = c("aut", "cre"),
     email = "myrmecocystus@gmail.com"))
 License: MIT + file LICENSE
@@ -11,6 +11,7 @@ BugReports: https://github.com/ropenscilabs/originr/issues
 Imports:
     httr (>= 1.0.0),
     jsonlite (>= 0.9.19),
+    data.table,
     XML,
     taxize
 RoxygenNote: 5.0.1
