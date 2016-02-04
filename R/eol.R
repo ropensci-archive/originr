@@ -95,7 +95,7 @@ eol <- function(name = NULL, dataset="all", searchby = grep, page=NULL,
   args <- orc(list(id = datasetid, page = page, per_page = 500, filter = 'taxa'))
   tt <- httr::GET(url, query = args, ...)
   httr::stop_for_status(tt)
-  res <- jsonlite::fromJSON(httr::content(tt, "text"), FALSE)
+  res <- jsonlite::fromJSON(httr::content(tt, "text", encoding = "UTF-8"), FALSE)
   data_init <- res$collection_items
   mssg(verbose, sprintf("Getting data for %s names...", res$total_items))
 
@@ -114,7 +114,7 @@ eol <- function(name = NULL, dataset="all", searchby = grep, page=NULL,
       args <- orc(list(id = datasetid, page = pages_get[i], per_page = 500, filter = 'taxa'))
       tt <- httr::GET(url, query = args, ...)
       httr::stop_for_status(tt)
-      res <- jsonlite::fromJSON(httr::content(tt, "text"), FALSE)
+      res <- jsonlite::fromJSON(httr::content(tt, "text", encoding = "UTF-8"), FALSE)
       out[[i]] <- res$collection_items
     }
     res2 <- orc(out)

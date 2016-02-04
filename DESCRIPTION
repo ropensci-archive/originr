@@ -2,7 +2,7 @@ Package: originr
 Type: Package
 Title: Species Origin Data
 Description: Get species origin data. And stuff.
-Version: 0.0.2.9300
+Version: 0.0.2.9350
 Authors@R: c(
     person("Scott", "Chamberlain", role = c("aut", "cre"), email = "myrmecocystus@gmail.com"),
     person("Ignasi", "Bartomeus", role = "aut", email = "nacho.bartomeus@gmail.com")
