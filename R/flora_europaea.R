@@ -40,30 +40,29 @@ flora_europaea <- function(sp, ...) {
                SPECIES_XREF = species, TAXON_NAME_XREF = "", RANK = "")
   message(paste("Checking species", sp))
   #Parse url and extract table
-  #readHTMLTable(urls) #Not working, don't know why.
   url_check <- GET(url, query = args, ...)
   warn_for_status(url_check)
-  doc <- htmlTreeParse(content(url_check, "text"), useInternalNodes = TRUE, encoding = "UTF-8")
-  tables <- getNodeSet(doc, "//table")
+  doc <- xml2::read_html(content(url_check, "text", encoding = "UTF-8"), encoding = "UTF-8")
+  tables <- xml2::xml_find_all(doc, "//table")
+
   if (length(tables) < 3) {
     message("Species not found")
   } else {
-    #t <- readHTMLTable(tables[[3]]) #Not working either
     #try alternative
     # I am assuming 3 is always right, so far it is.
     ### Scott here: would be better to select the table by name if possible
-    text <- xmlValue(tables[[3]], trim = FALSE)
+    text <- xml_text(tables[[3]], trim = FALSE)
     if (!grepl("Distribution:", text, perl = TRUE)) {
       message("Species with no distribution. Probably not native.")
     } else{
       m_nat <- regexpr("Distribution: [A-Za-z ()?*%,]*", text, perl = TRUE)
       distr_nat <- regmatches(text, m_nat)
       distr_status <- regmatches(distr_nat,
-                               gregexpr("[*][A-Z][a-z]", distr_nat, perl = TRUE)) # * Status doubtful; possibly native
+                                 gregexpr("[*][A-Z][a-z]", distr_nat, perl = TRUE)) # * Status doubtful; possibly native
       distr_occ <- regmatches(distr_nat,
-                            gregexpr("[?][A-Z][a-z]", distr_nat, perl = TRUE)) # ? Occurrence doubtful
+                              gregexpr("[?][A-Z][a-z]", distr_nat, perl = TRUE)) # ? Occurrence doubtful
       distr_ext <- regmatches(distr_nat,
-                            gregexpr("[%][A-Z][a-z]", distr_nat, perl = TRUE)) # % Extinct
+                              gregexpr("[%][A-Z][a-z]", distr_nat, perl = TRUE)) # % Extinct
       #also deal with Rs(N) extract e.g. Rs(N,B,C,W,K,E)
       distr_nat <- gsub(",", " ", distr_nat)
       distr_nat <- gsub("(", " ", distr_nat, fixed = TRUE)
@@ -98,7 +97,7 @@ flora_europaea <- function(sp, ...) {
         exo <- sapply(exotic, function(x) {country[which(x == country$short), "long"]})
       }
       list(native = as.character(nat), exotic = as.character(exo), status_doubtful = as.character(stat),
-         occurrence_doubtful = as.character(oc), extinct = as.character(ex))
+           occurrence_doubtful = as.character(oc), extinct = as.character(ex))
     }
   }
 }

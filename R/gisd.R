@@ -41,30 +41,30 @@
 #' gisd(sp, simplify = TRUE)
 #' }
 gisd <- function(x, simplify = FALSE, verbose=TRUE) {
-	species <- gsub(" ", "+", x) # reformat sp list
-	# create urls to parse
-	urls <- paste("http://www.issg.org/database/species/search.asp?sts=sss&st=sss&fr=1&x=13&y=9&sn=",
-								species, "&rn=&hci=-1&ei=-1&lang=EN", sep = "")
-	# create a data.frame to store the Output
-	out <- data.frame(species = x, status = c(1:length(urls)))
-	#loop through all species
-	for(i in seq_along(urls)){
-		#Parse url and extract table
-		doc <- htmlTreeParse(urls[i], useInternalNodes = TRUE)
-		if(length(getNodeSet(doc, "//span[@class='SearchTitle']")) > 0){
-			out[i, 2] <- "Not in GISD"
-		} else{
-			if(!simplify){
-			  one <- tryCatch(getNodeSet(doc, "//span[@class='ListNote']", fun=xmlValue)[[1]],
+  species <- gsub(" ", "+", x) # reformat sp list
+  # create urls to parse
+  urls <- paste("http://www.issg.org/database/species/search.asp?sts=sss&st=sss&fr=1&x=13&y=9&sn=",
+                species, "&rn=&hci=-1&ei=-1&lang=EN", sep = "")
+  # create a data.frame to store the Output
+  out <- data.frame(species = x, status = c(1:length(urls)))
+  #loop through all species
+  for (i in seq_along(urls)) {
+    #Parse url and extract table
+    doc <- xml2::read_html(urls[i])
+    if (length(xml2::xml_find_all(doc, "//span[@class='SearchTitle']")) > 0) {
+      out[i, 2] <- "Not in GISD"
+    } else{
+      if (!simplify) {
+        one <- tryCatch(xml2::xml_text(xml2::xml_find_all(doc, "//span[@class='ListNote']"))[[1]],
                         error = function(e) e)
-			  two <- paste(getNodeSet(doc, "//span[@class='Info']", fun=xmlValue), collapse="; ")
-			  out[i, 2] <- paste(if(is(one, "simpleError")) NULL else one, two, sep="; ")
-			} else {
+        two <- paste(xml2::xml_text(xml2::xml_find_all(doc, "//span[@class='Info']")), collapse = "; ")
+        out[i, 2] <- paste(if (is(one, "simpleError")) NULL else one, two, sep = "; ")
+      } else {
         out[i, 2] <- "Invasive"
-			}
-		}
-		mssg(verbose, paste("Checking species", i))
-	}
-	mssg(verbose, "Done")
-	return(out)
+      }
+    }
+    mssg(verbose, paste("Checking species", i))
+  }
+  mssg(verbose, "Done")
+  return(out)
 }
