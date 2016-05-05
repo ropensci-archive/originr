@@ -15,7 +15,7 @@
 #' @description This function check which species (both plants and animals) are
 #' considered "invaders" somewhere in the world.
 #'
-#' For that end, it checks GISD (http://www.issg.org/database/welcome/) and
+#' For that end, it checks GISD (http://www.iucngisd.org/gisd) and
 #' returns a value, either "Not in GISD" or the brief description presented in
 #' GISD.
 #'
