@@ -18,13 +18,14 @@ level of invasiveness.}
 \item{verbose}{logical; If TRUE (default), informative messages printed.}
 }
 \value{
-A data.frame with species names and invasiveness.
+A list with species names, native range countries, and invasive
+range countries
 }
 \description{
 This function check which species (both plants and animals) are
 considered "invaders" somewhere in the world.
 
-For that end, it checks GISD (http://www.issg.org/database/welcome/) and
+For that end, it checks GISD (http://www.iucngisd.org/gisd) and
 returns a value, either "Not in GISD" or the brief description presented in
 GISD.
 
@@ -46,6 +47,11 @@ eol_invasive only updates their GISD data occassionally. See notes in
 \dontrun{
 sp <- c("Carpobrotus edulis", "Rosmarinus officinalis")
 ## first species is invasive, second one is not.
+gisd(sp)
+gisd(sp, simplify = TRUE)
+
+sp <- c("Carpobrotus edulis", "Rosmarinus officinalis", "Acacia mangium",
+"Archontophoenix cunninghamiana", "Antigonon leptopus")
 gisd(sp)
 gisd(sp, simplify = TRUE)
 }

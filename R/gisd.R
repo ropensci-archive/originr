@@ -10,7 +10,8 @@
 #'    level of invasiveness.
 #' @param verbose logical; If TRUE (default), informative messages printed.
 #'
-#' @return A data.frame with species names and invasiveness.
+#' @return A list with species names, native range countries, and invasive
+#' range countries
 #'
 #' @description This function check which species (both plants and animals) are
 #' considered "invaders" somewhere in the world.
@@ -39,32 +40,43 @@
 #' ## first species is invasive, second one is not.
 #' gisd(sp)
 #' gisd(sp, simplify = TRUE)
+#'
+#' sp <- c("Carpobrotus edulis", "Rosmarinus officinalis", "Acacia mangium",
+#' "Archontophoenix cunninghamiana", "Antigonon leptopus")
+#' gisd(sp)
+#' gisd(sp, simplify = TRUE)
 #' }
 gisd <- function(x, simplify = FALSE, verbose=TRUE) {
-  species <- gsub(" ", "+", x) # reformat sp list
-  # create urls to parse
-  urls <- paste("http://www.issg.org/database/species/search.asp?sts=sss&st=sss&fr=1&x=13&y=9&sn=",
-                species, "&rn=&hci=-1&ei=-1&lang=EN", sep = "")
-  # create a data.frame to store the Output
-  out <- data.frame(species = x, status = c(1:length(urls)))
+  outlist <- list()
+
   #loop through all species
-  for (i in seq_along(urls)) {
-    #Parse url and extract table
-    doc <- xml2::read_html(urls[i])
-    if (length(xml2::xml_find_all(doc, "//span[@class='SearchTitle']")) > 0) {
-      out[i, 2] <- "Not in GISD"
+  for (i in seq_along(x)) {
+    mssg(verbose, paste("Checking", x[i]))
+    out <- gbif_find(x[i])
+    if (length(out) == 0) {
+      outlist[[i]] <- list(species = x[i], status = "Not in GISD")
     } else{
+      #Parse url and extract table
+      doc <- xml2::read_html(paste0(gisd_base(), out$taxonID))
       if (!simplify) {
-        one <- tryCatch(xml2::xml_text(xml2::xml_find_all(doc, "//span[@class='ListNote']"))[[1]],
-                        error = function(e) e)
-        two <- paste(xml2::xml_text(xml2::xml_find_all(doc, "//span[@class='Info']")), collapse = "; ")
-        out[i, 2] <- paste(if (is(one, "simpleError")) NULL else one, two, sep = "; ")
+        alien <- gsub("^\\s+|\\s+$", "", gsub("\\[|\\]|[[:digit:]]", "", xml_text(xml_find_all(doc, '//div[@id="ar-col"]//ul/li'))))
+        native <- gsub("^\\s+|\\s+$", "", xml_text(xml_find_all(doc, '//div[@id="nr-col"]//ul/li')))
+        outlist[[i]] <- list(species = x[i], alien_range = alien, native_range = native)
       } else {
-        out[i, 2] <- "Invasive"
+        outlist[[i]] <- list(species = x[i], status = "Invasive")
       }
     }
-    mssg(verbose, paste("Checking species", i))
   }
+  names(outlist) <- sp
   mssg(verbose, "Done")
-  return(out)
+  return(outlist)
 }
+
+gbif_find <- function(x) {
+  args <- list(datasetKey = 'b351a324-77c4-41c9-a909-f30f77268bc4', name = x)
+  out <- GET('http://api.gbif.org/v1/species', query = args)
+  stop_for_status(out)
+  fromJSON(content(out, "text", encoding = "UTF-8"))$results
+}
+
+gisd_base <- function() "http://www.iucngisd.org/gisd/species.php?sc="

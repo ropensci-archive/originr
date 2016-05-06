@@ -12,7 +12,7 @@
 #' @author Scott Chamberlain \email{myrmecocystus@@gmail.com}
 #' @author Ignasi Bartomeus \email{nacho.bartomeus@@gmail.com}
 #'
-#' @section Data from:
+#' @section Data sources in the package:
 #' \itemize{
 #'  \item Encyclopedia of Life (http://eol.org)
 #'  \item Flora Europaea (http://rbg-web2.rbge.org.uk/FE/fe.html)
