@@ -134,7 +134,7 @@ flora_europaea("Lavandula stoechas")
 
 ## Meta
 
-* Please [report any issues or bugs](https://github.com/ropensci/originr/issues).
+* Please [report any issues or bugs](https://github.com/ropenscilabs/originr/issues).
 * License: MIT
 * Get citation information for `originr` in R doing `citation(package = 'originr')`
 * Please note that this project is released with a [Contributor Code of Conduct](CONDUCT.md). By participating in this project you agree to abide by its terms.
