@@ -21,4 +21,6 @@ Imports:
     data.table,
     xml2,
     taxize
+Suggests:
+    testthat
 RoxygenNote: 5.0.1
