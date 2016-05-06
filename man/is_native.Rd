@@ -50,8 +50,7 @@ lapply(sp, is_native, where = "Islas_Baleares", region = "europe")
 
 # combine output for many taxa
 res <- lapply(sp, is_native, where = "Continental US", region = "america")
-library("dplyr")
-rbind_all(res)
+do.call(rbind, res)
 }
 }
 \author{

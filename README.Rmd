@@ -40,12 +40,45 @@ devtools::install_github("ropenscilabs/originr")
 library("originr")
 ```
 
-## examples
+## EOL invasive species datasets
+
+Datasets included:
+
+* `gisd100` - 100 of the World's Worst Invasive Alien Species
+(Global Invasive Species Database) [http://eol.org/collections/54500](http://eol.org/collections/54500)
+* `gisd` - Global Invasive Species Database 2013 [http://eol.org/collections/54983](http://eol.org/collections/54983)
+* `isc` - Centre for Agriculture and Biosciences International Invasive Species
+Compendium (ISC) [http://eol.org/collections/55180](http://eol.org/collections/55180)
+* `daisie` - Delivering Alien Invasive Species Inventories for Europe (DAISIE) Species
+List [http://eol.org/collections/55179](http://eol.org/collections/55179)
+* `i3n` - IABIN Invasives Information Network (I3N) Species
+http://eol.org/collections/55176
+* `mineps` - Marine Invaders of the NE Pacific Species [http://eol.org/collections/55331](http://eol.org/collections/55331)
+
+An example using `mineps`
 
 ```{r}
-print("hello world")
+eol(name='Ciona intestinalis', dataset='mineps')
 ```
 
+## Native Species Resolver
+
+```{r}
+nsr("Pinus ponderosa", "United States")
+```
+
+## Global Invasive Species Database
+
+```{r}
+sp <- c("Carpobrotus edulis", "Rosmarinus officinalis")
+gisd(sp)
+```
+
+## Flora Europaea
+
+```{r}
+flora_europaea("Lavandula stoechas")
+```
 
 ## Meta
 

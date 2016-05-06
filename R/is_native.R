@@ -39,8 +39,7 @@
 #'
 #' # combine output for many taxa
 #' res <- lapply(sp, is_native, where = "Continental US", region = "america")
-#' library("dplyr")
-#' rbind_all(res)
+#' do.call(rbind, res)
 #' }
 is_native <- function(sp, where, region = c("america", "europe"), ...) {
   if (!region %in% c("america", "europe")) {
