@@ -1,5 +1,6 @@
 #' originr - Species Origin Data
 #'
+#' @importFrom stats na.omit setNames
 #' @importFrom httr GET content stop_for_status warn_for_status
 #' @importFrom jsonlite fromJSON
 #' @importFrom taxize get_uid classification get_tsn itis_native
