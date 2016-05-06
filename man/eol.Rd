@@ -4,7 +4,7 @@
 \alias{eol}
 \title{Search for presence of taxonomic names in EOL invasive species databases.}
 \usage{
-eol(name = NULL, dataset = "all", searchby = grep, page = NULL,
+eol(name, dataset = "all", searchby = grep, page = NULL,
   per_page = NULL, key = NULL, verbose = TRUE, count = FALSE, ...)
 }
 \arguments{
@@ -79,19 +79,19 @@ Datasets are not updated that often. Here's last updated dates for some of the d
 }
 \examples{
 \dontrun{
-eol_invasive_(name='Brassica oleracea', dataset='gisd')
-eol_invasive_(name=c('Lymantria dispar','Cygnus olor','Hydrilla verticillata','Pinus concolor'),
+eol(name='Brassica oleracea', dataset='gisd')
+eol(name=c('Lymantria dispar','Cygnus olor','Hydrilla verticillata','Pinus concolor'),
    dataset='gisd')
-eol_invasive_(name='Sargassum', dataset='gisd')
-eol_invasive_(name='Ciona intestinalis', dataset='mineps')
-eol_invasive_(name=c('Lymantria dispar','Cygnus olor','Hydrilla verticillata','Pinus concolor'),
+eol(name='Sargassum', dataset='gisd')
+eol(name='Ciona intestinalis', dataset='mineps')
+eol(name=c('Lymantria dispar','Cygnus olor','Hydrilla verticillata','Pinus concolor'),
    dataset='i3n')
-eol_invasive_(name=c('Branta canadensis','Gallus gallus','Myiopsitta monachus'),
+eol(name=c('Branta canadensis','Gallus gallus','Myiopsitta monachus'),
    dataset='daisie')
-eol_invasive_(name=c('Branta canadensis','Gallus gallus','Myiopsitta monachus'), dataset='isc')
+eol(name=c('Branta canadensis','Gallus gallus','Myiopsitta monachus'), dataset='isc')
 
 # Count
-eol_invasive_(name=c('Lymantria dispar','Cygnus olor','Hydrilla verticillata','Pinus concolor'),
+eol(name=c('Lymantria dispar','Cygnus olor','Hydrilla verticillata','Pinus concolor'),
    dataset='gisd', count = TRUE)
 }
 }

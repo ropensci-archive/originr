@@ -4,11 +4,13 @@
 \alias{flora_europaea}
 \title{Check species status (native/exotic) in Flora Europaea}
 \usage{
-flora_europaea(sp, ...)
+flora_europaea(sp, verbose = TRUE, ...)
 }
 \arguments{
 \item{sp}{character; a vector of length one with a single scientific species names in
 the form of \code{c("Genus species")}.}
+
+\item{verbose}{logical; If TRUE (default), informative messages printed.}
 
 \item{...}{Curl options passed on to \code{\link[httr]{GET}}}
 }

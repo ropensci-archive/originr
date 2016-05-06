@@ -62,19 +62,19 @@
 #' @references See info for each data source at \url{http://eol.org/collections/55367/taxa}
 #'
 #' @examples \dontrun{
-#' eol_invasive_(name='Brassica oleracea', dataset='gisd')
-#' eol_invasive_(name=c('Lymantria dispar','Cygnus olor','Hydrilla verticillata','Pinus concolor'),
+#' eol(name='Brassica oleracea', dataset='gisd')
+#' eol(name=c('Lymantria dispar','Cygnus olor','Hydrilla verticillata','Pinus concolor'),
 #'    dataset='gisd')
-#' eol_invasive_(name='Sargassum', dataset='gisd')
-#' eol_invasive_(name='Ciona intestinalis', dataset='mineps')
-#' eol_invasive_(name=c('Lymantria dispar','Cygnus olor','Hydrilla verticillata','Pinus concolor'),
+#' eol(name='Sargassum', dataset='gisd')
+#' eol(name='Ciona intestinalis', dataset='mineps')
+#' eol(name=c('Lymantria dispar','Cygnus olor','Hydrilla verticillata','Pinus concolor'),
 #'    dataset='i3n')
-#' eol_invasive_(name=c('Branta canadensis','Gallus gallus','Myiopsitta monachus'),
+#' eol(name=c('Branta canadensis','Gallus gallus','Myiopsitta monachus'),
 #'    dataset='daisie')
-#' eol_invasive_(name=c('Branta canadensis','Gallus gallus','Myiopsitta monachus'), dataset='isc')
+#' eol(name=c('Branta canadensis','Gallus gallus','Myiopsitta monachus'), dataset='isc')
 #'
 #' # Count
-#' eol_invasive_(name=c('Lymantria dispar','Cygnus olor','Hydrilla verticillata','Pinus concolor'),
+#' eol(name=c('Lymantria dispar','Cygnus olor','Hydrilla verticillata','Pinus concolor'),
 #'    dataset='gisd', count = TRUE)
 #' }
 eol <- function(name = NULL, dataset="all", searchby = grep, page=NULL,
@@ -120,17 +120,17 @@ eol <- function(name = NULL, dataset="all", searchby = grep, page=NULL,
     res2 <- orc(out)
     dat_all <- do.call(c, list(data_init, do.call(c, res2)))
     dat_all <- lapply(dat_all, "[", c("name","object_id"))
-    dat <- do.call(rbind, lapply(dat_all, data.frame, stringsAsFactors = FALSE))
+    dat <- do.call("rbind.data.frame", lapply(dat_all, data.frame, stringsAsFactors = FALSE))
   } else {
     dat_all <- lapply(data_init, "[", c("name","object_id"))
-    dat <- do.call(rbind, lapply(dat_all, data.frame, stringsAsFactors = FALSE))
+    dat <- do.call("rbind.data.frame", lapply(dat_all, data.frame, stringsAsFactors = FALSE))
   }
 
   # search by name
   getmatches <- function(x, y){
     matched <- eval(y)(x, dat$name)
     if (identical(matched, integer(0))) {
-      dff <- data.frame(name = x, object_id = NaN)
+      dff <- data.frame(name = x, object_id = NaN, stringsAsFactors = FALSE)
       dff$name <- as.character(dff$name)
       dff
     } else {
@@ -138,7 +138,7 @@ eol <- function(name = NULL, dataset="all", searchby = grep, page=NULL,
     }
   }
   tmp <- setNames(lapply(name, getmatches, y = searchby), name)
-  df <- do.call(rbind, Map(function(x,y) data.frame(id = y, x), tmp, names(tmp)))
+  df <- do.call("rbind.data.frame", Map(function(x,y) data.frame(id = y, x, stringsAsFactors = FALSE), tmp, names(tmp)))
   df$db <- dataset
   names(df)[c(1,3)] <- c("searched_name","eol_object_id")
   row.names(df) <- NULL

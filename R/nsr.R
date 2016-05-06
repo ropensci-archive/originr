@@ -10,6 +10,8 @@
 #' @details Currently, only one name is allowed per request. We loop internally
 #' over a list of length > 1, but this will still be slow due to only 1
 #' name per request.
+#'
+#' Note that this service can be quite slow.
 #' @examples \dontrun{
 #' nsr("Pinus ponderosa", "United States")
 #' nsr(c("Pinus ponderosa", "Poa annua"), "United States")
@@ -34,7 +36,7 @@ nsr <- function(species, country, stateprovince = NULL, countyparish = NULL, ...
 nsr_GET <- function(url, args, ...) {
   x <- httr::GET(url, query = args, ...)
   httr::stop_for_status(x)
-  xx <- jsonlite::fromJSON(httr::content(x, "text"), FALSE)$nsr_results
+  xx <- jsonlite::fromJSON(httr::content(x, "text", encoding = "UTF-8"), FALSE)$nsr_results
   if (length(xx) == 0) NULL else xx[[1]]$nsr_result
 }
 

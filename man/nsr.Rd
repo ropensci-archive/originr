@@ -24,6 +24,8 @@ Search the Native Species Resolver
 Currently, only one name is allowed per request. We loop internally
 over a list of length > 1, but this will still be slow due to only 1
 name per request.
+
+Note that this service can be quite slow.
 }
 \examples{
 \dontrun{
