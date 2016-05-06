@@ -46,10 +46,8 @@
 #' gisd(sp)
 #' gisd(sp, simplify = TRUE)
 #' }
-gisd <- function(x, simplify = FALSE, verbose=TRUE) {
+gisd <- function(x, simplify = FALSE, verbose = TRUE) {
   outlist <- list()
-
-  #loop through all species
   for (i in seq_along(x)) {
     mssg(verbose, paste("Checking", x[i]))
     out <- gbif_find(x[i])
@@ -67,7 +65,7 @@ gisd <- function(x, simplify = FALSE, verbose=TRUE) {
       }
     }
   }
-  names(outlist) <- sp
+  names(outlist) <- x
   mssg(verbose, "Done")
   return(outlist)
 }
