@@ -24,5 +24,6 @@ Imports:
     taxize
 Suggests:
     testthat,
-    roxygen2 (>= 5.0.1)
+    roxygen2 (>= 5.0.1),
+    covr
 RoxygenNote: 5.0.1

@@ -4,6 +4,8 @@ originr
 
 
 [![Build Status](https://travis-ci.org/ropenscilabs/originr.svg?branch=master)](https://travis-ci.org/ropenscilabs/originr)
+[![codecov.io](https://codecov.io/github/ropenscilabs/originr/coverage.svg?branch=master)](https://codecov.io/github/ropenscilabs/originr?branch=master)
+[![rstudio mirror downloads](http://cranlogs.r-pkg.org/badges/originr)](https://github.com/metacran/cranlogs.app)
 
 Species Origin Data
 
