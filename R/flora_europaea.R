@@ -4,6 +4,7 @@
 #'
 #' @param sp character; a vector of length one with a single scientific species names in
 #' the form of \code{c("Genus species")}.
+#' @param verbose logical; If TRUE (default), informative messages printed.
 #' @param ... Curl options passed on to \code{\link[httr]{GET}}
 #' @return A list of vectors containing the countries where the species is native, exotic, ...
 #'
@@ -30,7 +31,7 @@
 #' sapply(sp, flora_europaea, simplify = FALSE)
 #' }
 #'
-flora_europaea <- function(sp, ...) {
+flora_europaea <- function(sp, verbose = TRUE, ...) {
   #reformat sp list
   genus <- strsplit(sp, " ")[[1]][1]
   species <- strsplit(sp, " ")[[1]][2]
@@ -38,7 +39,7 @@ flora_europaea <- function(sp, ...) {
   url <- "http://rbg-web2.rbge.org.uk/cgi-bin/nph-readbtree.pl/feout"
   args <- list(FAMILY_XREF = "", GENUS_XREF = genus,
                SPECIES_XREF = species, TAXON_NAME_XREF = "", RANK = "")
-  message(paste("Checking species", sp))
+  mssg(verbose, paste("Checking", sp))
   #Parse url and extract table
   url_check <- GET(url, query = args, ...)
   warn_for_status(url_check)
@@ -46,14 +47,15 @@ flora_europaea <- function(sp, ...) {
   tables <- xml2::xml_find_all(doc, "//table")
 
   if (length(tables) < 3) {
-    message("Species not found")
+    mssg(verbose, "Species not found")
+    NULL
   } else {
     #try alternative
     # I am assuming 3 is always right, so far it is.
     ### Scott here: would be better to select the table by name if possible
     text <- xml_text(tables[[3]], trim = FALSE)
     if (!grepl("Distribution:", text, perl = TRUE)) {
-      message("Species with no distribution. Probably not native.")
+      mssg(verbose, "Species with no distribution. Probably not native.")
     } else{
       m_nat <- regexpr("Distribution: [A-Za-z ()?*%,]*", text, perl = TRUE)
       distr_nat <- regmatches(text, m_nat)
