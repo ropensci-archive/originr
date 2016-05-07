@@ -6,6 +6,7 @@ originr
 [![Build Status](https://travis-ci.org/ropenscilabs/originr.svg?branch=master)](https://travis-ci.org/ropenscilabs/originr)
 [![codecov.io](https://codecov.io/github/ropenscilabs/originr/coverage.svg?branch=master)](https://codecov.io/github/ropenscilabs/originr?branch=master)
 [![rstudio mirror downloads](http://cranlogs.r-pkg.org/badges/originr)](https://github.com/metacran/cranlogs.app)
+[![cran version](http://www.r-pkg.org/badges/version/originr)](https://cran.r-project.org/package=originr)
 
 Species Origin Data
 
@@ -86,25 +87,25 @@ gisd(sp)
 #> $`Carpobrotus edulis`
 #> $`Carpobrotus edulis`$species
 #> [1] "Carpobrotus edulis"
-#> 
+#>
 #> $`Carpobrotus edulis`$alien_range
-#>  [1] "albania"          "argentina"        "australia"       
-#>  [4] "bermuda"          "chile"            "croatia"         
-#>  [7] "france"           "french polynesia" "germany"         
-#> [10] "gibraltar"        "greece"           "guernsey"        
-#> [13] "ireland"          "italy"            "malta"           
-#> [16] "mexico"           "new zealand"      "pitcairn"        
-#> [19] "portugal"         "saint helena"     "spain"           
-#> [22] "tunisia"          "united kingdom"   "united states"   
-#> 
+#>  [1] "albania"          "argentina"        "australia"
+#>  [4] "bermuda"          "chile"            "croatia"
+#>  [7] "france"           "french polynesia" "germany"
+#> [10] "gibraltar"        "greece"           "guernsey"
+#> [13] "ireland"          "italy"            "malta"
+#> [16] "mexico"           "new zealand"      "pitcairn"
+#> [19] "portugal"         "saint helena"     "spain"
+#> [22] "tunisia"          "united kingdom"   "united states"
+#>
 #> $`Carpobrotus edulis`$native_range
 #> character(0)
-#> 
-#> 
+#>
+#>
 #> $`Rosmarinus officinalis`
 #> $`Rosmarinus officinalis`$species
 #> [1] "Rosmarinus officinalis"
-#> 
+#>
 #> $`Rosmarinus officinalis`$status
 #> [1] "Not in GISD"
 ```
@@ -115,19 +116,19 @@ gisd(sp)
 ```r
 flora_europaea("Lavandula stoechas")
 #> $native
-#>  [1] "Islas_Baleares" "Corse"          "Kriti"          "France"        
-#>  [5] "Greece"         "Spain"          "Italy"          "Portugal"      
-#>  [9] "Sardegna"       "Sicilia"        "Turkey"        
-#> 
+#>  [1] "Islas_Baleares" "Corse"          "Kriti"          "France"
+#>  [5] "Greece"         "Spain"          "Italy"          "Portugal"
+#>  [9] "Sardegna"       "Sicilia"        "Turkey"
+#>
 #> $exotic
 #> [1] NA
-#> 
+#>
 #> $status_doubtful
 #> [1] NA
-#> 
+#>
 #> $occurrence_doubtful
 #> [1] NA
-#> 
+#>
 #> $extinct
 #> [1] NA
 ```
