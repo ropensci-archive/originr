@@ -3,6 +3,7 @@
 export(eol)
 export(flora_europaea)
 export(gisd)
+export(griis)
 export(is_native)
 export(nsr)
 importFrom(data.table,rbindlist)
