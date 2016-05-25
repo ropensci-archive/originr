@@ -34,7 +34,8 @@
 #' gisd(sp, simplify = TRUE)
 #' }
 #'
-griis <- function(name = NULL, impacts = NULL, verified = NULL, country = NULL, kindom = NULL, type = NULL){
+griis <- function(name = NULL, impacts = NULL, verified = NULL, country = NULL,
+                  kindom = NULL, type = NULL){
   #checks that can be implmented
   #species is well spelled
   #country is well spelled
@@ -44,8 +45,9 @@ griis <- function(name = NULL, impacts = NULL, verified = NULL, country = NULL, 
   #type is terrestrial...
   #Parse url and extract table
   doc <- read.table(paste0(griis_base(), "name=", name, "&impacts=", impacts,
-                           "&verified=", verified, "&country=", country, "&kindom=", kindom,
-                           "&type=", type), header = TRUE, sep = ";")
+                           "&verified=", verified, "&country=", country,
+                           "&kindom=", kindom, "&type=", type),
+                    header = TRUE, sep = ";")
   colnames(doc)[7] <- "Evidence.of.Impacts"
   colnames(doc)[8] <- "Verification"
   return(doc[,-11])
