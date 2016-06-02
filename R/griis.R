@@ -34,7 +34,6 @@
 #'
 griis <- function(name = NULL, impacts = NULL, verified = NULL, country = NULL,
                   kindom = NULL, type = NULL){
-  #species is well spelled (should we check this with taxize, or people can do it beforehand?)
   #country is well spelled
   countries <- c("Afghanistan",
                  "Albania",
@@ -194,16 +193,15 @@ griis <- function(name = NULL, impacts = NULL, verified = NULL, country = NULL,
     }
   }
   #Parse url and extract table
-  if(!is.null(name)){
-    name <- gsub(" ", "%20", name, fixed = TRUE)
-  }
-  url <- paste0(griis_base(), "name=", name, "&impacts=", impacts,
-                "&verified=", verified, "&country=", country,
-                "&kindom=", kindom, "&type=", type)
-  doc <- read.table(url, header = TRUE, sep = ";")
-  colnames(doc)[7] <- "Evidence.of.Impacts"
-  colnames(doc)[8] <- "Verified"
-  return(doc[,-11])
+  args <- orc(list(name = name, impacts = impacts,
+               verified = verified, country = country,
+               kindom = kindom, type = type))
+  url_check <- GET(griis_base(), query = args)
+  warn_for_status(url_check)
+  doc <- read.table(url_check$url, header = TRUE, sep = ";", stringsAsFactors = FALSE)
+  colnames(doc)[which(colnames(doc) == "Evidence.of.Impacts..Y.N.")] <- "Evidence.of.Impacts"
+  colnames(doc)[which(colnames(doc) == "Verification..Y.N.")] <- "Verified"
+  return(doc[,-which(colnames(doc) == "X")])
 }
 
 griis_base <- function() "http://www.griis.org/export_csv.php?"
