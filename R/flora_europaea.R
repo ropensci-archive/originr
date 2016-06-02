@@ -33,6 +33,10 @@
 #'
 flora_europaea <- function(sp, verbose = TRUE, ...) {
   #reformat sp list
+  if (length(sp) > 1) {
+    stop("sp should be a single species", call. = FALSE)
+  }
+  sp <- as.character(sp)
   genus <- strsplit(sp, " ")[[1]][1]
   species <- strsplit(sp, " ")[[1]][2]
   #create urls to parse
