@@ -39,6 +39,8 @@ sp <- c("Lavandula stoechas", "Carpobrotus edulis", "Rhododendron ponticum",
        "Alkanna lutea", "Anchusa arvensis")
 flora_europaea(sp[1])
 sapply(sp, flora_europaea, simplify = FALSE)
+
+flora_europaea('Calendula officinalis')
 }
 
 }

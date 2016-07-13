@@ -29,6 +29,8 @@
 #'        "Alkanna lutea", "Anchusa arvensis")
 #' flora_europaea(sp[1])
 #' sapply(sp, flora_europaea, simplify = FALSE)
+#'
+#' flora_europaea('Calendula officinalis')
 #' }
 #'
 flora_europaea <- function(sp, verbose = TRUE, ...) {
