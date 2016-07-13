@@ -62,7 +62,7 @@ griis <- function(name = NULL, impacts = NULL, verified = NULL, country = NULL,
                  "Cambodia",
                  "Cameroon",
                  "Canada",
-                 "Côte d'Ivoire",
+                 "C\u00f4te d'Ivoire",
                  "Central African Republic",
                  "Chad",
                  "Chile",
@@ -198,7 +198,7 @@ griis <- function(name = NULL, impacts = NULL, verified = NULL, country = NULL,
                kindom = kindom, type = type))
   url_check <- GET(griis_base(), query = args)
   warn_for_status(url_check)
-  doc <- read.table(url_check$url, header = TRUE, sep = ";", stringsAsFactors = FALSE)
+  doc <- utils::read.table(url_check$url, header = TRUE, sep = ";", stringsAsFactors = FALSE)
   colnames(doc)[which(colnames(doc) == "Evidence.of.Impacts..Y.N.")] <- "Evidence.of.Impacts"
   colnames(doc)[which(colnames(doc) == "Verification..Y.N.")] <- "Verified"
   return(doc[,-which(colnames(doc) == "X")])
