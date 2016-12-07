@@ -3,8 +3,8 @@ originr
 
 
 
-[![Build Status](https://travis-ci.org/ropenscilabs/originr.svg?branch=master)](https://travis-ci.org/ropenscilabs/originr)
-[![codecov.io](https://codecov.io/github/ropenscilabs/originr/coverage.svg?branch=master)](https://codecov.io/github/ropenscilabs/originr?branch=master)
+[![Build Status](https://travis-ci.org/ropensci/originr.svg?branch=master)](https://travis-ci.org/ropensci/originr)
+[![codecov.io](https://codecov.io/github/ropensci/originr/coverage.svg?branch=master)](https://codecov.io/github/ropensci/originr?branch=master)
 [![rstudio mirror downloads](http://cranlogs.r-pkg.org/badges/originr)](https://github.com/metacran/cranlogs.app)
 [![cran version](http://www.r-pkg.org/badges/version/originr)](https://cran.r-project.org/package=originr)
 
@@ -31,7 +31,7 @@ Development version
 
 
 ```r
-devtools::install_github("ropenscilabs/originr")
+devtools::install_github("ropensci/originr")
 ```
 
 
@@ -135,7 +135,7 @@ flora_europaea("Lavandula stoechas")
 
 ## Meta
 
-* Please [report any issues or bugs](https://github.com/ropenscilabs/originr/issues).
+* Please [report any issues or bugs](https://github.com/ropensci/originr/issues).
 * License: MIT
 * Get citation information for `originr` in R doing `citation(package = 'originr')`
 * Please note that this project is released with a [Contributor Code of Conduct](CONDUCT.md). By participating in this project you agree to abide by its terms.
