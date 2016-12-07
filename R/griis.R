@@ -2,17 +2,17 @@
 #'
 #' @export
 #'
-#' @param name character; a string with the scientific species name in the form of
-#'    "Genus species". Default is NULL: return all records.
-#' @param impacts character; "Yes" for returning only records with impacts. Default to NULL:
-#'     return all records.
-#' @param verified character; "Yes" for returning only verified records. Default to NULL:
-#'     return all records.
+#' @param name character; a string with the scientific species name in the
+#' form of "Genus species". Default is NULL: return all records.
+#' @param impacts character; "Yes" for returning only records with impacts.
+#' Default to NULL: return all records.
+#' @param verified character; "Yes" for returning only verified records.
+#' Default to NULL: return all records.
 #' @param country character containing a valid name of a country for which to
 #'     filter the results. Default to NULL: return all records.
-#' @param kindom character containing a valid name of a kindom (plantae, animalia, fungi,
-#'     protozoa, chromista, others, ) for which to filter the results.
-#'     Default to NULL: return all records.
+#' @param kindom character containing a valid name of a kindom (plantae,
+#' animalia, fungi, protozoa, chromista, others, ) for which to filter the
+#' results. Default to NULL: return all records.
 #' @param type character containing a valid name of a environment type
 #'    (terrestrial, freshwater, marine, brackish, host) for which to filter
 #'    the results. Default to NULL: return all records.
@@ -22,8 +22,8 @@
 #' @note It seems as 'name' overrides 'kindom', which means records from a
 #'    a plant species will be returned even if kindom is set to animalia.
 #'
-#' @description This retrieves information from GRIIS (http://www.griis.org/) and
-#' returns all the queried records. As other functions in this package, the
+#' @description This retrieves information from GRIIS (http://www.griis.org/)
+#' and returns all the queried records. As other functions in this package, the
 #' function is as good as the database is.
 #'
 #' @author Ignasi Bartomeus \email{nacho.bartomeus@@gmail.com}
@@ -198,8 +198,10 @@ griis <- function(name = NULL, impacts = NULL, verified = NULL, country = NULL,
                kindom = kindom, type = type))
   url_check <- GET(griis_base(), query = args)
   warn_for_status(url_check)
-  doc <- utils::read.table(url_check$url, header = TRUE, sep = ";", stringsAsFactors = FALSE)
-  colnames(doc)[which(colnames(doc) == "Evidence.of.Impacts..Y.N.")] <- "Evidence.of.Impacts"
+  doc <- utils::read.table(url_check$url, header = TRUE, sep = ";",
+                           stringsAsFactors = FALSE)
+  colnames(doc)[which(colnames(doc) == "Evidence.of.Impacts..Y.N.")] <-
+    "Evidence.of.Impacts"
   colnames(doc)[which(colnames(doc) == "Verification..Y.N.")] <- "Verified"
   return(doc[,-which(colnames(doc) == "X")])
 }

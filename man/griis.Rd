@@ -8,21 +8,21 @@ griis(name = NULL, impacts = NULL, verified = NULL, country = NULL,
   kindom = NULL, type = NULL)
 }
 \arguments{
-\item{name}{character; a string with the scientific species name in the form of
-"Genus species". Default is NULL: return all records.}
+\item{name}{character; a string with the scientific species name in the
+form of "Genus species". Default is NULL: return all records.}
 
-\item{impacts}{character; "Yes" for returning only records with impacts. Default to NULL:
-return all records.}
+\item{impacts}{character; "Yes" for returning only records with impacts.
+Default to NULL: return all records.}
 
-\item{verified}{character; "Yes" for returning only verified records. Default to NULL:
-return all records.}
+\item{verified}{character; "Yes" for returning only verified records.
+Default to NULL: return all records.}
 
 \item{country}{character containing a valid name of a country for which to
 filter the results. Default to NULL: return all records.}
 
-\item{kindom}{character containing a valid name of a kindom (plantae, animalia, fungi,
-protozoa, chromista, others, ) for which to filter the results.
-Default to NULL: return all records.}
+\item{kindom}{character containing a valid name of a kindom (plantae,
+animalia, fungi, protozoa, chromista, others, ) for which to filter the
+results. Default to NULL: return all records.}
 
 \item{type}{character containing a valid name of a environment type
 (terrestrial, freshwater, marine, brackish, host) for which to filter
@@ -33,8 +33,8 @@ A data.frame with species names, country where recorded,
    origin and source among other fields.
 }
 \description{
-This retrieves information from GRIIS (http://www.griis.org/) and
-returns all the queried records. As other functions in this package, the
+This retrieves information from GRIIS (http://www.griis.org/)
+and returns all the queried records. As other functions in this package, the
 function is as good as the database is.
 }
 \note{

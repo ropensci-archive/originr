@@ -12,11 +12,12 @@ Species Origin Data
 
 Data sources:
 
-* Encyclopedia of Life [http://eol.org](http://eol.org)
-* Flora Europaea [http://rbg-web2.rbge.org.uk/FE/fe.html](http://rbg-web2.rbge.org.uk/FE/fe.html)
-* Global Invasive Species Database [http://www.iucngisd.org/gisd](http://www.iucngisd.org/gisd)
-* Native Species Resolver [http://bien.nceas.ucsb.edu/bien/tools/nsr/nsr-ws/](http://bien.nceas.ucsb.edu/bien/tools/nsr/nsr-ws/)
-* Integrated Taxonomic Information Service [http://www.itis.gov/](http://www.itis.gov/)
+* Encyclopedia of Life <http://eol.org>
+* Flora Europaea <http://rbg-web2.rbge.org.uk/FE/fe.html>
+* Global Invasive Species Database <http://www.iucngisd.org/gisd>
+* Native Species Resolver <http://bien.nceas.ucsb.edu/bien/tools/nsr/nsr-ws/>
+* Integrated Taxonomic Information Service <http://www.itis.gov/>
+* Global Register of Introduced and Invasive Species <http://www.griis.org/>
 
 ## Install
 
@@ -44,15 +45,15 @@ library("originr")
 Datasets included:
 
 * `gisd100` - 100 of the World's Worst Invasive Alien Species
-(Global Invasive Species Database) [http://eol.org/collections/54500](http://eol.org/collections/54500)
-* `gisd` - Global Invasive Species Database 2013 [http://eol.org/collections/54983](http://eol.org/collections/54983)
+(Global Invasive Species Database) <http://eol.org/collections/54500>
+* `gisd` - Global Invasive Species Database 2013 <http://eol.org/collections/54983>
 * `isc` - Centre for Agriculture and Biosciences International Invasive Species
-Compendium (ISC) [http://eol.org/collections/55180](http://eol.org/collections/55180)
+Compendium (ISC) <http://eol.org/collections/55180>
 * `daisie` - Delivering Alien Invasive Species Inventories for Europe (DAISIE) Species
-List [http://eol.org/collections/55179](http://eol.org/collections/55179)
+List <http://eol.org/collections/55179>
 * `i3n` - IABIN Invasives Information Network (I3N) Species
 http://eol.org/collections/55176
-* `mineps` - Marine Invaders of the NE Pacific Species [http://eol.org/collections/55331](http://eol.org/collections/55331)
+* `mineps` - Marine Invaders of the NE Pacific Species <http://eol.org/collections/55331>
 
 An example using `mineps`
 
@@ -87,25 +88,25 @@ gisd(sp)
 #> $`Carpobrotus edulis`
 #> $`Carpobrotus edulis`$species
 #> [1] "Carpobrotus edulis"
-#>
+#> 
 #> $`Carpobrotus edulis`$alien_range
-#>  [1] "albania"          "argentina"        "australia"
-#>  [4] "bermuda"          "chile"            "croatia"
-#>  [7] "france"           "french polynesia" "germany"
-#> [10] "gibraltar"        "greece"           "guernsey"
-#> [13] "ireland"          "italy"            "malta"
-#> [16] "mexico"           "new zealand"      "pitcairn"
-#> [19] "portugal"         "saint helena"     "spain"
-#> [22] "tunisia"          "united kingdom"   "united states"
-#>
+#>  [1] "albania"          "argentina"        "australia"       
+#>  [4] "bermuda"          "chile"            "croatia"         
+#>  [7] "france"           "french polynesia" "germany"         
+#> [10] "gibraltar"        "greece"           "guernsey"        
+#> [13] "ireland"          "italy"            "malta"           
+#> [16] "mexico"           "new zealand"      "pitcairn"        
+#> [19] "portugal"         "saint helena"     "spain"           
+#> [22] "tunisia"          "united kingdom"   "united states"   
+#> 
 #> $`Carpobrotus edulis`$native_range
 #> character(0)
-#>
-#>
+#> 
+#> 
 #> $`Rosmarinus officinalis`
 #> $`Rosmarinus officinalis`$species
 #> [1] "Rosmarinus officinalis"
-#>
+#> 
 #> $`Rosmarinus officinalis`$status
 #> [1] "Not in GISD"
 ```
@@ -116,19 +117,19 @@ gisd(sp)
 ```r
 flora_europaea("Lavandula stoechas")
 #> $native
-#>  [1] "Islas_Baleares" "Corse"          "Kriti"          "France"
-#>  [5] "Greece"         "Spain"          "Italy"          "Portugal"
-#>  [9] "Sardegna"       "Sicilia"        "Turkey"
-#>
+#>  [1] "Islas_Baleares" "Corse"          "Kriti"          "France"        
+#>  [5] "Greece"         "Spain"          "Italy"          "Portugal"      
+#>  [9] "Sardegna"       "Sicilia"        "Turkey"        
+#> 
 #> $exotic
 #> [1] NA
-#>
+#> 
 #> $status_doubtful
 #> [1] NA
-#>
+#> 
 #> $occurrence_doubtful
 #> [1] NA
-#>
+#> 
 #> $extinct
 #> [1] NA
 ```
