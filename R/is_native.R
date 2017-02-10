@@ -59,10 +59,11 @@ is_native <- function(sp, where, region = c("america", "europe"), ...) {
       Out <- "species not in itis"
     } else {
       origin <- taxize::itis_native(tsn = tsn_, ...)
-      if(is.na(origin$origin)){
+      if (all(is.na(origin$origin))) {
         Out <- "species with no available origin in itis"
       } else {
-        Out <- as.character(origin[which(origin$jurisdictionvalue == where), "origin"])
+        Out <- origin[which(origin$jurisdictionvalue == where), "origin"][[1]]
+        if (length(Out) == 0) Out <- NA_character_
       }
     }
   }

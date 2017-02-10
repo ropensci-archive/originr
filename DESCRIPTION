@@ -8,7 +8,7 @@ Description: Get species origin data (whether species is native/invasive) from t
     (<http://bien.nceas.ucsb.edu/bien/tools/nsr/nsr-ws/>), Integrated Taxonomic
     Information Service (<http://www.itis.gov/>), and Global Register of 
     Introduced and Invasive Species (<http://www.griis.org/>).
-Version: 0.2.0.9150
+Version: 0.2.1.9110
 Authors@R: c(
     person("Scott", "Chamberlain", role = c("aut", "cre"), email = "myrmecocystus@gmail.com"),
     person("Ignasi", "Bartomeus", role = "aut", email = "nacho.bartomeus@gmail.com")
@@ -22,7 +22,7 @@ Imports:
     jsonlite (>= 0.9.19),
     data.table,
     xml2,
-    taxize
+    taxize (>= 0.8.4)
 Suggests:
     testthat,
     roxygen2 (>= 5.0.1),
