@@ -26,5 +26,6 @@ test_that("eol works", {
 test_that("fails well", {
   skip_on_cran()
 
-  expect_error(eol(), "please provide a taxonomic name")
+  expect_error(eol(), "argument \"name\" is missing")
+  expect_error(eol(""), "'name' must be longer than 0 characters")
 })

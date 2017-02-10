@@ -77,10 +77,10 @@
 #' eol(name=c('Lymantria dispar','Cygnus olor','Hydrilla verticillata','Pinus concolor'),
 #'    dataset='gisd', count = TRUE)
 #' }
-eol <- function(name = NULL, dataset="all", searchby = grep, page=NULL,
+eol <- function(name, dataset="all", searchby = grep, page=NULL,
   per_page=NULL, key = NULL, verbose=TRUE, count=FALSE, ...) {
 
-  if (is.null(name)) stop("please provide a taxonomic name")
+  if (nchar(name) < 1) stop("'name' must be longer than 0 characters")
   if (is.null(dataset)) stop("please provide a dataset name")
   datasetid <- switch(dataset,
            all = 55367,

@@ -4,7 +4,7 @@
 \alias{eol}
 \title{Search for presence of taxonomic names in EOL invasive species databases.}
 \usage{
-eol(name = NULL, dataset = "all", searchby = grep, page = NULL,
+eol(name, dataset = "all", searchby = grep, page = NULL,
   per_page = NULL, key = NULL, verbose = TRUE, count = FALSE, ...)
 }
 \arguments{
