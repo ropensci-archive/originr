@@ -15,8 +15,9 @@ See the Details for what each dataset ID.}
 
 \item{searchby}{One of 'grep' (exact match) or 'agrep' (fuzzy match)}
 
-\item{page}{A maximum of 30 results are returned per page. This parameter allows
-you to fetch more pages of results if there are more than 30 matches (Default 1)}
+\item{page}{A maximum of 30 results are returned per page. This parameter
+allows you to fetch more pages of results if there are more than 30 matches
+(Default: 1)}
 
 \item{per_page}{Results to get per page}
 
@@ -25,30 +26,32 @@ you to fetch more pages of results if there are more than 30 matches (Default 1)
 \item{verbose}{(logical) If TRUE the actual taxon queried is printed on the
 console.}
 
-\item{count}{(logical) If TRUE, give back a count of number of taxa listed as invasive, if
-FALSE (default), the normal output is given.}
+\item{count}{(logical) If TRUE, give back a count of number of taxa listed
+as invasive, if \code{FALSE} (default), the normal output is given.}
 
 \item{...}{Further args passed on to \code{\link[httr]{GET}}}
 }
 \value{
-A list of data.frame's/strings with results, with each element named by
-the input elements to the name parameter.
+A list of data.frame's/strings with results, with each element
+named by the input elements to the name parameter.
 }
 \description{
 See Details for important information.
 }
 \details{
-IMPORTANT: When you get a returned NaN for a taxon, that means it's not on the invasive list
-in question. If the taxon is found, a taxon identifier is returned.
+IMPORTANT: When you get a returned NaN for a taxon, that means it's not on
+the invasive list in question. If the taxon is found, a taxon identifier
+is returned.
 
 Beware that some datasets are quite large, and may take 30 sec to a minute to
 pull down all data before we can search for your species. Note there is no
 parameter in this API method for searching by taxon name.
 
-This function is vectorized, so you can pass a single name or a vector of names.
+This function is vectorized, so you can pass a single name or a vector
+of names.
 
-It's possible to return JSON or XML with the EOL API. However, this function only returns
-JSON for now.
+It's possible to return JSON or XML with the EOL API. However, this function
+only returns JSON for now.
 
 Options for the dataset parameter are
 \itemize{
@@ -58,15 +61,16 @@ Options for the dataset parameter are
  \item gisd - Global Invasive Species Database 2013 http://eol.org/collections/54983
  \item isc - Centre for Agriculture and Biosciences International Invasive Species
  Compendium (ISC) http://eol.org/collections/55180
- \item daisie - Delivering Alien Invasive Species Inventories for Europe (DAISIE) Species
- List http://eol.org/collections/55179
+ \item daisie - Delivering Alien Invasive Species Inventories for Europe
+ (DAISIE) Species List http://eol.org/collections/55179
  \item i3n - IABIN Invasives Information Network (I3N) Species
  http://eol.org/collections/55176
- \item mineps - Marine Invaders of the NE Pacific Species http://eol.org/collections/55331
+ \item mineps - Marine Invaders of the NE Pacific
+ Species http://eol.org/collections/55331
 }
 
-Datasets are not updated that often. Here's last updated dates for some of the datasets as of
-2014-08-25
+Datasets are not updated that often. Here's last updated dates for some of
+the datasets as of 2014-08-25
 
 \itemize{
  \item gisd100 updated 6 mos ago
@@ -80,22 +84,24 @@ Datasets are not updated that often. Here's last updated dates for some of the d
 \examples{
 \dontrun{
 eol(name='Brassica oleracea', dataset='gisd')
-eol(name=c('Lymantria dispar','Cygnus olor','Hydrilla verticillata','Pinus concolor'),
-   dataset='gisd')
+eol(name=c('Lymantria dispar','Cygnus olor','Hydrilla verticillata',
+  'Pinus concolor'), dataset='gisd')
 eol(name='Sargassum', dataset='gisd')
 eol(name='Ciona intestinalis', dataset='mineps')
-eol(name=c('Lymantria dispar','Cygnus olor','Hydrilla verticillata','Pinus concolor'),
-   dataset='i3n')
+eol(name=c('Lymantria dispar','Cygnus olor','Hydrilla verticillata',
+  'Pinus concolor'), dataset='i3n')
 eol(name=c('Branta canadensis','Gallus gallus','Myiopsitta monachus'),
    dataset='daisie')
-eol(name=c('Branta canadensis','Gallus gallus','Myiopsitta monachus'), dataset='isc')
+eol(name=c('Branta canadensis','Gallus gallus','Myiopsitta monachus'),
+  dataset='isc')
 
 # Count
-eol(name=c('Lymantria dispar','Cygnus olor','Hydrilla verticillata','Pinus concolor'),
-   dataset='gisd', count = TRUE)
+eol(name=c('Lymantria dispar','Cygnus olor','Hydrilla verticillata',
+  'Pinus concolor'), dataset='gisd', count = TRUE)
 }
 }
 \references{
-See info for each data source at \url{http://eol.org/collections/55367/taxa}
+See info for each data source at
+\url{http://eol.org/collections/55367/taxa}
 }
 
