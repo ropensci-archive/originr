@@ -38,9 +38,10 @@
 #'  \item all - All datasets
 #'  \item gisd100 - 100 of the World's Worst Invasive Alien Species
 #'  (Global Invasive Species Database) http://eol.org/collections/54500
-#'  \item gisd - Global Invasive Species Database 2013 http://eol.org/collections/54983
-#'  \item isc - Centre for Agriculture and Biosciences International Invasive Species
-#'  Compendium (ISC) http://eol.org/collections/55180
+#'  \item gisd - Global Invasive Species Database 2013
+#'  http://eol.org/collections/54983
+#'  \item isc - Centre for Agriculture and Biosciences International Invasive
+#'  Species Compendium (ISC) http://eol.org/collections/55180
 #'  \item daisie - Delivering Alien Invasive Species Inventories for Europe
 #'  (DAISIE) Species List http://eol.org/collections/55179
 #'  \item i3n - IABIN Invasives Information Network (I3N) Species
@@ -86,7 +87,7 @@
 eol <- function(name, dataset="all", searchby = grep, page=NULL,
   per_page=NULL, key = NULL, verbose=TRUE, count=FALSE, ...) {
 
-  if (nchar(name) < 1) stop("'name' must be longer than 0 characters")
+  if (any(nchar(name) < 1)) stop("'name' must be longer than 0 characters")
   if (is.null(dataset)) stop("please provide a dataset name")
   datasetid <- switch(dataset,
            all = 55367,
@@ -98,28 +99,23 @@ eol <- function(name, dataset="all", searchby = grep, page=NULL,
            mineps = 55331)
   url = 'http://eol.org/api/collections/1.0.json'
 
-  args <- orc(list(id = datasetid, page = page, per_page = 500, filter = 'taxa'))
+  args <- orc(list(id = datasetid, page = page, per_page = 500,
+                   filter = 'taxa'))
   tt <- httr::GET(url, query = args, ...)
   httr::stop_for_status(tt)
-  res <- jsonlite::fromJSON(httr::content(tt, "text", encoding = "UTF-8"), FALSE)
+  res <- jsonlite::fromJSON(httr::content(tt, "text", encoding = "UTF-8"),
+                            FALSE)
   data_init <- res$collection_items
   mssg(verbose, sprintf("Getting data for %s names...", res$total_items))
 
-  pages_left <- function(){
-    tot <- res$total_items
-    got <- length(res$collection_items)
-    if (got < tot) {
-      seq(1, ceiling((tot - got)/500), 1) + 1
-    }
-  }
-  pages_get <- pages_left()
+  pages_get <- pages_left(res)
 
   if (!is.null(pages_get)) {
     out <- list()
-    for (i in seq_along(pages_get)) {
-      args <- orc(list(id = datasetid, page = pages_get[i], per_page = 500,
+    for (i in pages_get) {
+      args <- orc(list(id = datasetid, page = i, per_page = 500,
                        filter = 'taxa'))
-      tt <- httr::GET(url, query = args, ...)
+      tt <- httr::GET(url, query = args, verbose())
       httr::stop_for_status(tt)
       res <- jsonlite::fromJSON(httr::content(tt, "text", encoding = "UTF-8"),
                                 FALSE)
@@ -127,27 +123,15 @@ eol <- function(name, dataset="all", searchby = grep, page=NULL,
     }
     res2 <- orc(out)
     dat_all <- do.call(c, list(data_init, do.call(c, res2)))
-    dat_all <- lapply(dat_all, "[", c("name","object_id"))
-    dat <- do.call("rbind.data.frame", lapply(dat_all, data.frame,
-                                              stringsAsFactors = FALSE))
+    dat_all <- lapply(dat_all, "[", c("name", "object_id"))
+    dat <- todf(dat_all)
   } else {
     dat_all <- lapply(data_init, "[", c("name","object_id"))
-    dat <- do.call("rbind.data.frame", lapply(dat_all, data.frame,
-                                              stringsAsFactors = FALSE))
+    dat <- todf(dat_all)
   }
 
   # search by name
-  getmatches <- function(x, y){
-    matched <- eval(y)(x, dat$name)
-    if (identical(matched, integer(0))) {
-      dff <- data.frame(name = x, object_id = NaN, stringsAsFactors = FALSE)
-      dff$name <- as.character(dff$name)
-      dff
-    } else {
-      dat[matched,]
-    }
-  }
-  tmp <- setNames(lapply(name, getmatches, y = searchby), name)
+  tmp <- stats::setNames(lapply(name, getmatches, y = searchby, z = dat), name)
   df <- do.call("rbind.data.frame",
                 Map(function(x,y) {
                   data.frame(id = y, x, stringsAsFactors = FALSE)
@@ -156,4 +140,23 @@ eol <- function(name, dataset="all", searchby = grep, page=NULL,
   names(df)[c(1,3)] <- c("searched_name","eol_object_id")
   row.names(df) <- NULL
   if (!count) df else length(na.omit(df$eol_object_id))
+}
+
+pages_left <- function(x) {
+  tot <- x$total_items
+  got <- length(x$collection_items)
+  if (got < tot) {
+    seq(1, ceiling((tot - got)/500), 1) + 1
+  }
+}
+
+getmatches <- function(x, y, z) {
+  matched <- eval(y)(x, z$name)
+  if (identical(matched, integer(0))) {
+    dff <- data.frame(name = x, object_id = NaN, stringsAsFactors = FALSE)
+    dff$name <- as.character(dff$name)
+    dff
+  } else {
+    z[matched, ]
+  }
 }

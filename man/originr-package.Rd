@@ -2,8 +2,8 @@
 % Please edit documentation in R/originr-package.R
 \docType{package}
 \name{originr-package}
-\alias{originr}
 \alias{originr-package}
+\alias{originr}
 \title{originr - Species Origin Data}
 \description{
 originr - Species Origin Data
@@ -18,10 +18,10 @@ originr - Species Origin Data
  \item Integrated Taxonomic Information Service (http://www.itis.gov/)
 }
 }
+
 \author{
 Scott Chamberlain \email{myrmecocystus@gmail.com}
 
 Ignasi Bartomeus \email{nacho.bartomeus@gmail.com}
 }
 \keyword{package}
-

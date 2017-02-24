@@ -56,4 +56,3 @@ do.call(rbind, res)
 \author{
 Ignasi Bartomeus \email{nacho.bartomeus@gmail.com}
 }
-

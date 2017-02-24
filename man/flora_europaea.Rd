@@ -47,4 +47,3 @@ flora_europaea('Calendula officinalis')
 \author{
 Ignasi Bartomeus \email{nacho.bartomeus@gmail.com}
 }
-

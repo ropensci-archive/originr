@@ -58,9 +58,10 @@ Options for the dataset parameter are
  \item all - All datasets
  \item gisd100 - 100 of the World's Worst Invasive Alien Species
  (Global Invasive Species Database) http://eol.org/collections/54500
- \item gisd - Global Invasive Species Database 2013 http://eol.org/collections/54983
- \item isc - Centre for Agriculture and Biosciences International Invasive Species
- Compendium (ISC) http://eol.org/collections/55180
+ \item gisd - Global Invasive Species Database 2013
+ http://eol.org/collections/54983
+ \item isc - Centre for Agriculture and Biosciences International Invasive
+ Species Compendium (ISC) http://eol.org/collections/55180
  \item daisie - Delivering Alien Invasive Species Inventories for Europe
  (DAISIE) Species List http://eol.org/collections/55179
  \item i3n - IABIN Invasives Information Network (I3N) Species
@@ -104,4 +105,3 @@ eol(name=c('Lymantria dispar','Cygnus olor','Hydrilla verticillata',
 See info for each data source at
 \url{http://eol.org/collections/55367/taxa}
 }
-

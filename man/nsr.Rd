@@ -42,4 +42,3 @@ nsr("Pinus ponderosa", "United States", config = verbose())
 \references{
 \url{http://bien.nceas.ucsb.edu/bien/tools/nsr/nsr-ws/}
 }
-
