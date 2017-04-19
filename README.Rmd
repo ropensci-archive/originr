@@ -15,9 +15,8 @@ knitr::opts_chunk$set(
 [![rstudio mirror downloads](http://cranlogs.r-pkg.org/badges/originr)](https://github.com/metacran/cranlogs.app)
 [![cran version](http://www.r-pkg.org/badges/version/originr)](https://cran.r-project.org/package=originr)
 
-Species Origin Data
-
-Data sources:
+## Description 
+This package allows you to obtain species origin data (whether species is native/invasive) from many sources on the web including:
 
 * Encyclopedia of Life <http://eol.org>
 * Flora Europaea <http://rbg-web2.rbge.org.uk/FE/fe.html>
