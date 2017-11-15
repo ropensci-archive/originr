@@ -6,7 +6,7 @@ Description: Get species origin data (whether species is native/invasive) from t
     'Europaea' (<http://rbg-web2.rbge.org.uk/FE/fe.html>), Global Invasive Species
     Database (<http://www.iucngisd.org/gisd>), the Native Species Resolver
     (<http://bien.nceas.ucsb.edu/bien/tools/nsr/nsr-ws/>), Integrated Taxonomic
-    Information Service (<http://www.itis.gov/>), and Global Register of 
+    Information Service (<http://www.itis.gov/>), and Global Register of
     Introduced and Invasive Species (<http://www.griis.org/>).
 Version: 0.2.1.9115
 Authors@R: c(
@@ -25,6 +25,5 @@ Imports:
     taxize (>= 0.8.4)
 Suggests:
     testthat,
-    roxygen2 (>= 6.0.1),
-    covr
+    roxygen2 (>= 6.0.1)
 RoxygenNote: 6.0.1
