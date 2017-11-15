@@ -17,12 +17,11 @@ License: MIT + file LICENSE
 URL: https://github.com/ropensci/originr
 BugReports: https://github.com/ropensci/originr/issues
 Imports:
-    stats,
-    httr (>= 1.1.0),
-    jsonlite (>= 0.9.19),
+    crul (>= 0.4),
+    jsonlite (>= 1.5),
     data.table,
     xml2,
-    taxize (>= 0.8.4)
+    taxize (>= 0.9.0)
 Suggests:
     testthat,
     roxygen2 (>= 6.0.1)
