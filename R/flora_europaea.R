@@ -54,7 +54,7 @@ flora_europaea <- function(sp, verbose = TRUE, ...) {
     mssg(verbose, "Species not found")
     NULL
   } else {
-    for(i in 1:length(tables)){
+    for(i in seq_along(tables)){
       text <- xml_text(tables[[i]], trim = FALSE)
       if (grepl("Distribution:", text, perl = TRUE)) {break}
     }
