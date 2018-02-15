@@ -56,10 +56,10 @@ flora_europaea <- function(sp, verbose = TRUE, ...) {
     mssg(verbose, "Species not found")
     NULL
   } else {
-    #try alternative
-    # I am assuming 3 is always right, so far it is.
-    ### Scott here: would be better to select the table by name if possible
-    text <- xml_text(tables[[3]], trim = FALSE)
+    for(i in seq_along(tables)){
+      text <- xml_text(tables[[i]], trim = FALSE)
+      if (grepl("Distribution:", text, perl = TRUE)) {break}
+    }
     if (!grepl("Distribution:", text, perl = TRUE)) {
       mssg(verbose, "Species with no distribution. Probably not native.")
     } else{
