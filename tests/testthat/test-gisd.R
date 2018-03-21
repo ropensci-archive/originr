@@ -4,7 +4,7 @@ test_that("gisd works", {
   skip_on_cran()
 
   sp <- c("Carpobrotus edulis", "Rosmarinus officinalis")
-  aa <- gisd(sp, verbose = FALSE)
+  aa <- gisd(sp, messages = FALSE)
 
   expect_is(aa, "list")
   expect_named(aa, sp)
@@ -16,7 +16,7 @@ test_that("fails well - species not found when searching GBIF", {
   skip_on_cran()
 
   sp <- "asdfadsf"
-  aa <- gisd(sp, verbose = FALSE)
+  aa <- gisd(sp, messages = FALSE)
 
   expect_is(aa, "list")
   expect_named(aa, sp)

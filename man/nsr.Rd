@@ -15,7 +15,7 @@ nsr(species, country, stateprovince = NULL, countyparish = NULL, ...)
 
 \item{countyparish}{(character) A county or parish name}
 
-\item{...}{Further args passed on to \code{\link[httr]{GET}}}
+\item{...}{curl options passed on to \code{\link[crul]{HttpClient}}}
 }
 \description{
 Search the Native Species Resolver
@@ -35,8 +35,7 @@ splist <- c("Pinus ponderosa", "Poa annua", "bromus tectorum", "Ailanthus altiss
 nsr(splist, country = "United States")
 
 # curl options
-library("httr")
-nsr("Pinus ponderosa", "United States", config = verbose())
+nsr("Pinus ponderosa", "United States", verbose = TRUE)
 }
 }
 \references{

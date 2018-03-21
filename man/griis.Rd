@@ -5,7 +5,7 @@
 \title{Check invasive species status for a species from GRIIS database}
 \usage{
 griis(name = NULL, impacts = NULL, verified = NULL, country = NULL,
-  kindom = NULL, type = NULL)
+  kindom = NULL, type = NULL, ...)
 }
 \arguments{
 \item{name}{character; a string with the scientific species name in the
@@ -27,6 +27,8 @@ results. Default to NULL: return all records.}
 \item{type}{character containing a valid name of a environment type
 (terrestrial, freshwater, marine, brackish, host) for which to filter
 the results. Default to NULL: return all records.}
+
+\item{...}{curl options passed on to \code{\link[crul]{HttpClient}}}
 }
 \value{
 A data.frame with species names, country where recorded,

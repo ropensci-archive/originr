@@ -8,7 +8,9 @@
 #'    values "Invasive", "Not in GISD". I recomend to check first the not
 #'    simplified version (default), which contains raw information about the
 #'    level of invasiveness.
-#' @param verbose logical; If TRUE (default), informative messages printed.
+#' @param messages logical; If \code{TRUE} (default), informative messages 
+#' printed.
+#' @param ... curl options passed on to \code{\link[crul]{HttpClient}}
 #'
 #' @return A list with species names, native range countries, and invasive
 #' range countries
@@ -45,11 +47,11 @@
 #' gisd(sp)
 #' gisd(sp, simplify = TRUE)
 #' }
-gisd <- function(x, simplify = FALSE, verbose = TRUE) {
+gisd <- function(x, simplify = FALSE, messages = TRUE, ...) {
   outlist <- list()
   for (i in seq_along(x)) {
-    mssg(verbose, paste("Checking", x[i]))
-    out <- gbif_find(x[i])
+    mssg(messages, paste("Checking", x[i]))
+    out <- gbif_find(x[i], ...)
     if (length(out) == 0) {
       outlist[[i]] <- list(species = x[i], status = "Not in GISD")
     } else{
@@ -65,15 +67,16 @@ gisd <- function(x, simplify = FALSE, verbose = TRUE) {
     }
   }
   names(outlist) <- x
-  mssg(verbose, "Done")
+  mssg(messages, "Done")
   return(outlist)
 }
 
-gbif_find <- function(x) {
+gbif_find <- function(x, ...) {
   args <- list(datasetKey = 'b351a324-77c4-41c9-a909-f30f77268bc4', name = x)
-  out <- GET('http://api.gbif.org/v1/species', query = args)
-  stop_for_status(out)
-  fromJSON(content(out, "text", encoding = "UTF-8"))$results
+  cli <- crul::HttpClient$new(url = "https://api.gbif.org", opts = list(...))
+  out <- cli$get("v1/species", query = args)
+  out$raise_for_status()
+  fromJSON(out$parse("UTF-8"))$results
 }
 
 gisd_base <- function() "http://www.iucngisd.org/gisd/species.php?sc="

@@ -4,34 +4,37 @@
 \alias{flora_europaea}
 \title{Check species status (native/exotic) in Flora Europaea}
 \usage{
-flora_europaea(sp, verbose = TRUE, ...)
+flora_europaea(sp, messages = TRUE, ...)
 }
 \arguments{
-\item{sp}{character; a vector of length one with a single scientific species names in
-the form of \code{c("Genus species")}.}
+\item{sp}{character; a vector of length one with a single scientific 
+species names in the form of \code{c("Genus species")}.}
 
-\item{verbose}{logical; If TRUE (default), informative messages printed.}
+\item{messages}{logical; If \code{TRUE} (default), informative messages 
+printed}
 
-\item{...}{Curl options passed on to \code{\link[httr]{GET}}}
+\item{...}{curl options passed on to \code{\link[crul]{HttpClient}}}
 }
 \value{
-A list of vectors containing the countries where the species is native, exotic, ...
+A list of vectors containing the countries where the species is 
+native, exotic, ...
 }
 \description{
-This function check the status (native or exotic) of a species in each of
-the eu countries.
+This function check the status (native or exotic) of a species 
+in each of the eu countries.
 
-For that end, it checks Flora Europaea (http://rbg-web2.rbge.org.uk/FE/fe.html) and scrapes
-the data from there.
+For that end, it checks Flora Europaea (http://rbg-web2.rbge.org.uk/FE/fe.html) 
+and scrapes the data from there.
 
 Note that the webpage contains more information.
 
-As expected, the function is as good as the database is. I think for native species
-is robust but new exotic species are not added as to my knowledge the database is
-not updated anymore. The database is not able to recognize species synonyms.
+As expected, the function is as good as the database is. I think for 
+native species is robust but new exotic species are not added as to my 
+knowledge the database is not updated anymore. The database is not able to 
+recognize species synonyms.
 
-See \url{http://rbg-web2.rbge.org.uk/FE/data/countries} for explanation of the
-database codes.
+See \url{http://rbg-web2.rbge.org.uk/FE/data/countries} for explanation 
+of the database codes.
 }
 \examples{
 \dontrun{

@@ -8,7 +8,7 @@ Description: Get species origin data (whether species is native/invasive) from t
     (<http://bien.nceas.ucsb.edu/bien/tools/nsr/nsr-ws/>), Integrated Taxonomic
     Information Service (<http://www.itis.gov/>), and Global Register of
     Introduced and Invasive Species (<http://www.griis.org/>).
-Version: 0.2.1.9115
+Version: 0.2.3.9210
 Authors@R: c(
     person("Scott", "Chamberlain", role = c("aut", "cre"), email = "myrmecocystus@gmail.com"),
     person("Ignasi", "Bartomeus", role = "aut", email = "nacho.bartomeus@gmail.com")

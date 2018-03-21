@@ -2,26 +2,29 @@
 #'
 #' @export
 #'
-#' @param sp character; a vector of length one with a single scientific species names in
-#' the form of \code{c("Genus species")}.
-#' @param verbose logical; If TRUE (default), informative messages printed.
-#' @param ... Curl options passed on to \code{\link[httr]{GET}}
-#' @return A list of vectors containing the countries where the species is native, exotic, ...
+#' @param sp character; a vector of length one with a single scientific 
+#' species names in the form of \code{c("Genus species")}.
+#' @param messages logical; If \code{TRUE} (default), informative messages 
+#' printed
+#' @param ... curl options passed on to \code{\link[crul]{HttpClient}}
+#' @return A list of vectors containing the countries where the species is 
+#' native, exotic, ...
 #'
-#' @description This function check the status (native or exotic) of a species in each of
-#' the eu countries.
+#' @description This function check the status (native or exotic) of a species 
+#' in each of the eu countries.
 #'
-#' For that end, it checks Flora Europaea (http://rbg-web2.rbge.org.uk/FE/fe.html) and scrapes
-#' the data from there.
+#' For that end, it checks Flora Europaea (http://rbg-web2.rbge.org.uk/FE/fe.html) 
+#' and scrapes the data from there.
 #'
 #' Note that the webpage contains more information.
 #'
-#' As expected, the function is as good as the database is. I think for native species
-#' is robust but new exotic species are not added as to my knowledge the database is
-#' not updated anymore. The database is not able to recognize species synonyms.
+#' As expected, the function is as good as the database is. I think for 
+#' native species is robust but new exotic species are not added as to my 
+#' knowledge the database is not updated anymore. The database is not able to 
+#' recognize species synonyms.
 #'
-#' See \url{http://rbg-web2.rbge.org.uk/FE/data/countries} for explanation of the
-#' database codes.
+#' See \url{http://rbg-web2.rbge.org.uk/FE/data/countries} for explanation 
+#' of the database codes.
 #'
 #' @author Ignasi Bartomeus \email{nacho.bartomeus@@gmail.com}
 #' @examples \dontrun{
@@ -33,7 +36,7 @@
 #' flora_europaea('Calendula officinalis')
 #' }
 #'
-flora_europaea <- function(sp, verbose = TRUE, ...) {
+flora_europaea <- function(sp, messages = TRUE, ...) {
   #reformat sp list
   if (length(sp) > 1) {
     stop("sp should be a single species", call. = FALSE)
@@ -45,15 +48,16 @@ flora_europaea <- function(sp, verbose = TRUE, ...) {
   url <- "http://rbg-web2.rbge.org.uk/cgi-bin/nph-readbtree.pl/feout"
   args <- list(FAMILY_XREF = "", GENUS_XREF = genus,
                SPECIES_XREF = species, TAXON_NAME_XREF = "", RANK = "")
-  mssg(verbose, paste("Checking", sp))
+  mssg(messages, paste("Checking", sp))
   #Parse url and extract table
-  url_check <- GET(url, query = args, ...)
-  warn_for_status(url_check)
-  doc <- xml2::read_html(content(url_check, "text", encoding = "UTF-8"), encoding = "UTF-8")
+  cli <- crul::HttpClient$new(url = url, opts = list(...))
+  url_check <- cli$get(query = args)
+  warn_status(url_check)
+  doc <- xml2::read_html(url_check$parse("UTF-8"), encoding = "UTF-8")
   tables <- xml2::xml_find_all(doc, "//table")
 
   if (length(tables) < 3) {
-    mssg(verbose, "Species not found")
+    mssg(messages, "Species not found")
     NULL
   } else {
     for(i in seq_along(tables)){
@@ -61,7 +65,7 @@ flora_europaea <- function(sp, verbose = TRUE, ...) {
       if (grepl("Distribution:", text, perl = TRUE)) {break}
     }
     if (!grepl("Distribution:", text, perl = TRUE)) {
-      mssg(verbose, "Species with no distribution. Probably not native.")
+      mssg(messages, "Species with no distribution. Probably not native.")
     } else{
       m_nat <- regexpr("Distribution: [A-Za-z ()?*%,]*", text, perl = TRUE)
       distr_nat <- regmatches(text, m_nat)

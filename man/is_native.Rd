@@ -25,7 +25,7 @@ those: "Albania", "Austria", "Azores", "Belgium", "Islas_Baleares", "Britain",
 and "america" implemented "europe" checks Flora Europaea and only contain plants.
 "america" checks ITIS and contain both plant and animals.}
 
-\item{...}{Curl options passed on to \code{\link[httr]{GET}}}
+\item{...}{Curl options passed on to \code{\link[crul]{HttpClient}}}
 }
 \value{
 A data.frame, with species name and result of origin check

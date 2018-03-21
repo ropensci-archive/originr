@@ -17,7 +17,7 @@
 #' "USSR", "Sardegna", "Svalbard", "Sicilia", "Sweden", "Turkey", "USSR_Northern_Division",
 #' "USSR_Baltic_Division", "USSR_Central_Division", "USSR_South_western", "USSR_Krym",
 #' "USSRSouth_eastern_Division"
-#' @param ... Curl options passed on to \code{\link[httr]{GET}}
+#' @param ... Curl options passed on to \code{\link[crul]{HttpClient}}
 #' @return A data.frame, with species name and result of origin check
 #'
 #' @description This function check the status (native or exotic) of a species in a

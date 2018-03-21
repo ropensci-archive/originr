@@ -16,6 +16,7 @@
 #' @param type character containing a valid name of a environment type
 #'    (terrestrial, freshwater, marine, brackish, host) for which to filter
 #'    the results. Default to NULL: return all records.
+#' @param ... curl options passed on to \code{\link[crul]{HttpClient}}
 #' @return A data.frame with species names, country where recorded,
 #'    origin and source among other fields.
 #'
@@ -33,7 +34,7 @@
 #' }
 #'
 griis <- function(name = NULL, impacts = NULL, verified = NULL, country = NULL,
-                  kindom = NULL, type = NULL){
+                  kindom = NULL, type = NULL, ...){
   #country is well spelled
   countries <- c("Afghanistan",
                  "Albania",
@@ -196,9 +197,10 @@ griis <- function(name = NULL, impacts = NULL, verified = NULL, country = NULL,
   args <- orc(list(name = name, impacts = impacts,
                verified = verified, country = country,
                kindom = kindom, type = type))
-  url_check <- GET(griis_base(), query = args)
-  warn_for_status(url_check)
-  doc <- utils::read.table(url_check$url, header = TRUE, sep = ";",
+  cli <- crul::HttpClient$new(url = griis_base(), opts = list(...))
+  x <- cli$get("export_csv.php", query = args)
+  warn_status(x)
+  doc <- utils::read.table(x$url, header = TRUE, sep = ";",
                            stringsAsFactors = FALSE)
   colnames(doc)[which(colnames(doc) == "Evidence.of.Impacts..Y.N.")] <-
     "Evidence.of.Impacts"
@@ -206,5 +208,5 @@ griis <- function(name = NULL, impacts = NULL, verified = NULL, country = NULL,
   return(doc[,-which(colnames(doc) == "X")])
 }
 
-griis_base <- function() "http://www.griis.org/export_csv.php?"
+griis_base <- function() "http://www.griis.org"
 

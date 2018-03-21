@@ -12,11 +12,11 @@
 #' (Default: 1)
 #' @param per_page Results to get per page
 #' @param key Your EOL API key; loads from .Rprofile.
-#' @param verbose (logical) If TRUE the actual taxon queried is printed on the
-#'    console.
+#' @param messages (logical) If \code{TRUE} the actual taxon queried is printed 
+#' on the console.
 #' @param count (logical) If TRUE, give back a count of number of taxa listed
 #' as invasive, if \code{FALSE} (default), the normal output is given.
-#' @param ... Further args passed on to \code{\link[httr]{GET}}
+#' @param ... curl options passed on to \code{\link[crul]{HttpClient}}
 #'
 #' @details
 #' IMPORTANT: When you get a returned NaN for a taxon, that means it's not on
@@ -83,9 +83,12 @@
 #' # Count
 #' eol(name=c('Lymantria dispar','Cygnus olor','Hydrilla verticillata',
 #'   'Pinus concolor'), dataset='gisd', count = TRUE)
+#' 
+#' # curl options
+#' eol(name='Sargassum', dataset='gisd', verbose = TRUE)
 #' }
 eol <- function(name, dataset="all", searchby = grep, page=NULL,
-  per_page=NULL, key = NULL, verbose=TRUE, count=FALSE, ...) {
+  per_page=NULL, key = NULL, messages=TRUE, count=FALSE, ...) {
 
   if (any(nchar(name) < 1)) stop("'name' must be longer than 0 characters")
   if (is.null(dataset)) stop("please provide a dataset name")
@@ -97,16 +100,17 @@ eol <- function(name, dataset="all", searchby = grep, page=NULL,
            daisie = 55179,
            i3n = 55176,
            mineps = 55331)
-  url = 'http://eol.org/api/collections/1.0.json'
 
   args <- orc(list(id = datasetid, page = page, per_page = 500,
                    filter = 'taxa'))
-  tt <- httr::GET(url, query = args, ...)
-  httr::stop_for_status(tt)
-  res <- jsonlite::fromJSON(httr::content(tt, "text", encoding = "UTF-8"),
-                            FALSE)
+
+  cli <- crul::HttpClient$new(url = 'http://eol.org/api/collections/1.0.json', 
+    opts = list(...))
+  tt <- cli$get(query = args)
+  tt$raise_for_status()
+  res <- jsonlite::fromJSON(tt$parse("UTF-8"), FALSE)
   data_init <- res$collection_items
-  mssg(verbose, sprintf("Getting data for %s names...", res$total_items))
+  mssg(messages, sprintf("Getting data for %s names...", res$total_items))
 
   pages_get <- pages_left(res)
 
@@ -115,10 +119,9 @@ eol <- function(name, dataset="all", searchby = grep, page=NULL,
     for (i in pages_get) {
       args <- orc(list(id = datasetid, page = i, per_page = 500,
                        filter = 'taxa'))
-      tt <- httr::GET(url, query = args, verbose())
-      httr::stop_for_status(tt)
-      res <- jsonlite::fromJSON(httr::content(tt, "text", encoding = "UTF-8"),
-                                FALSE)
+      tt <- cli$get(query = args)
+      tt$raise_for_status()
+      res <- jsonlite::fromJSON(tt$parse("UTF-8"), FALSE)
       out[[i]] <- res$collection_items
     }
     res2 <- orc(out)
