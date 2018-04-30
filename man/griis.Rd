@@ -32,7 +32,7 @@ the results. Default to NULL: return all records.}
 }
 \value{
 A data.frame with species names, country where recorded,
-   origin and source among other fields.
+origin and source among other fields.
 }
 \description{
 This retrieves information from GRIIS (http://www.griis.org/)
@@ -41,7 +41,7 @@ function is as good as the database is.
 }
 \note{
 It seems as 'name' overrides 'kindom', which means records from a
-   a plant species will be returned even if kindom is set to animalia.
+a plant species will be returned even if kindom is set to animalia.
 }
 \examples{
 \dontrun{

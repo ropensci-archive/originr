@@ -15,7 +15,7 @@ values "Invasive", "Not in GISD". I recomend to check first the not
 simplified version (default), which contains raw information about the
 level of invasiveness.}
 
-\item{messages}{logical; If \code{TRUE} (default), informative messages 
+\item{messages}{logical; If \code{TRUE} (default), informative messages
 printed.}
 
 \item{...}{curl options passed on to \code{\link[crul]{HttpClient}}}
