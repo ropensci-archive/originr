@@ -1,5 +1,8 @@
 {
-  "@context": ["http://purl.org/codemeta/2.0", "http://schema.org"],
+  "@context": [
+    "http://purl.org/codemeta/2.0",
+    "http://schema.org"
+  ],
   "@type": "SoftwareSourceCode",
   "identifier": "originr",
   "description": "Get species origin data (whether species is native/invasive) from the\n    following sources on the web: Encyclopedia of Life (<http://eol.org>), Flora\n    'Europaea' (<http://rbg-web2.rbge.org.uk/FE/fe.html>), Global Invasive Species\n    Database (<http://www.iucngisd.org/gisd>), the Native Species Resolver\n    (<http://bien.nceas.ucsb.edu/bien/tools/nsr/nsr-ws/>), Integrated Taxonomic\n    Information Service (<http://www.itis.gov/>), and Global Register of\n    Introduced and Invasive Species (<http://www.griis.org/>).",
@@ -7,14 +10,14 @@
   "codeRepository": "https://github.com/ropensci/originr",
   "issueTracker": "https://github.com/ropensci/originr/issues",
   "license": "https://spdx.org/licenses/MIT",
-  "version": "0.2.1.9115",
+  "version": "0.3.0",
   "programmingLanguage": {
     "@type": "ComputerLanguage",
     "name": "R",
-    "version": "3.4.3",
+    "version": "3.5.0",
     "url": "https://r-project.org"
   },
-  "runtimePlatform": "R version 3.4.3 Patched (2018-01-01 r74017)",
+  "runtimePlatform": "R version 3.5.0 (2018-04-23)",
   "provider": {
     "@id": "https://cran.r-project.org",
     "@type": "Organization",
@@ -26,7 +29,8 @@
       "@type": "Person",
       "givenName": "Scott",
       "familyName": "Chamberlain",
-      "email": "myrmecocystus@gmail.com"
+      "email": "myrmecocystus@gmail.com",
+      "@id": "https://orcid.org/0000-0003-1444-9135"
     },
     {
       "@type": "Person",
@@ -39,7 +43,8 @@
     "@type": "Person",
     "givenName": "Scott",
     "familyName": "Chamberlain",
-    "email": "myrmecocystus@gmail.com"
+    "email": "myrmecocystus@gmail.com",
+    "@id": "https://orcid.org/0000-0003-1444-9135"
   },
   "softwareSuggestions": [
     {
@@ -71,7 +76,7 @@
       "@type": "SoftwareApplication",
       "identifier": "crul",
       "name": "crul",
-      "version": "0.4",
+      "version": "0.5.2",
       "provider": {
         "@id": "https://cran.r-project.org",
         "@type": "Organization",
@@ -129,5 +134,8 @@
   "contIntegration": "https://travis-ci.org/ropensci/originr",
   "releaseNotes": "https://github.com/ropensci/originr/blob/master/NEWS.md",
   "readme": "https://github.com/ropensci/originr/blob/master/README.md",
-  "fileSize": "16.138KB"
+  "fileSize": "22.475KB",
+  "applicationCategory": "Biology",
+  "isPartOf": "https://ropensci.org",
+  "keywords": ["species", "native", "invasive", "origin", "web", "API", "eol", "gisd", "nsr", "itis", "griis"]
 }
