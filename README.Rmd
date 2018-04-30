@@ -24,7 +24,7 @@ Data sources:
 * Global Invasive Species Database <http://www.iucngisd.org/gisd>
 * Native Species Resolver <http://bien.nceas.ucsb.edu/bien/tools/nsr/nsr-ws/>
 * Integrated Taxonomic Information Service <http://www.itis.gov/>
-* Global Register of Introduced and Invasive Species <http://www.griis.org/>
+* Global Register of Introduced and Invasive Species http://www.griis.org/
 
 ## Install
 
