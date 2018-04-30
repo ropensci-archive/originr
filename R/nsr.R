@@ -5,23 +5,42 @@
 #' @param country (character) A country name. required.
 #' @param stateprovince (character) A state or province name
 #' @param countyparish (character) A county or parish name
-#' @param ... curl options passed on to \code{\link[crul]{HttpClient}}
-#' @references \url{http://bien.nceas.ucsb.edu/bien/tools/nsr/nsr-ws/}
+#' @param ... curl options passed on to [crul::HttpClient]
+#' @references http://bien.nceas.ucsb.edu/bien/tools/nsr/nsr-ws/
 #' @details Currently, only one name is allowed per request. We loop internally
 #' over a list of length > 1, but this will still be slow due to only 1
 #' name per request.
 #'
 #' Note that this service can be quite slow.
+#' 
+#' @section political names:
+#' 
+#' - `nsr_countries`: is a vector of country names that we use to check
+#' your country names
+#' - `nsr_pol_divisions`: is a data.frame of country names and state/province
+#' names that we used to check your parameter inputs - these are for checklists 
+#' that NSR has complete coverage for
+#' 
 #' @examples \dontrun{
-#' nsr("Pinus ponderosa", "United States")
-#' nsr(c("Pinus ponderosa", "Poa annua"), "United States")
+#' nsr("Pinus ponderosa", country = "United States")
+#' nsr(c("Pinus ponderosa", "Poa annua"), country = "United States")
 #' splist <- c("Pinus ponderosa", "Poa annua", "bromus tectorum", "Ailanthus altissima")
 #' nsr(splist, country = "United States")
+#' nsr(splist, country = "United States", stateprovince = "California")
 #'
 #' # curl options
 #' nsr("Pinus ponderosa", "United States", verbose = TRUE)
 #' }
 nsr <- function(species, country, stateprovince = NULL, countyparish = NULL, ...) {
+  if (!country %in% nsr_countries) {
+    warning("country ", country, " not in the NSR list of countries")
+  }
+  if (!is.null(stateprovince)) {
+    if (!stateprovince %in% nsr_pol_divisions$state_province) {
+      warning("state/province ", stateprovince, 
+        " not in the NSR list of state/provinces")
+    }
+  }
   tmp <- lapply(species, function(z) {
     args <- orc(list(format = 'json', species = z, country = country,
                      stateprovince = stateprovince, countyparish = countyparish))

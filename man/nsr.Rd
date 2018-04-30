@@ -15,7 +15,7 @@ nsr(species, country, stateprovince = NULL, countyparish = NULL, ...)
 
 \item{countyparish}{(character) A county or parish name}
 
-\item{...}{curl options passed on to \code{\link[crul]{HttpClient}}}
+\item{...}{curl options passed on to \link[crul:HttpClient]{crul::HttpClient}}
 }
 \description{
 Search the Native Species Resolver
@@ -27,17 +27,29 @@ name per request.
 
 Note that this service can be quite slow.
 }
+\section{political names}{
+
+\itemize{
+\item \code{nsr_countries}: is a vector of country names that we use to check
+your country names
+\item \code{nsr_pol_divisions}: is a data.frame of country names and state/province
+names that we used to check your parameter inputs - these are for checklists
+that NSR has complete coverage for
+}
+}
+
 \examples{
 \dontrun{
-nsr("Pinus ponderosa", "United States")
-nsr(c("Pinus ponderosa", "Poa annua"), "United States")
+nsr("Pinus ponderosa", country = "United States")
+nsr(c("Pinus ponderosa", "Poa annua"), country = "United States")
 splist <- c("Pinus ponderosa", "Poa annua", "bromus tectorum", "Ailanthus altissima")
 nsr(splist, country = "United States")
+nsr(splist, country = "United States", stateprovince = "California")
 
 # curl options
 nsr("Pinus ponderosa", "United States", verbose = TRUE)
 }
 }
 \references{
-\url{http://bien.nceas.ucsb.edu/bien/tools/nsr/nsr-ws/}
+http://bien.nceas.ucsb.edu/bien/tools/nsr/nsr-ws/
 }

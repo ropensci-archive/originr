@@ -13,6 +13,6 @@ test_that("nsr works", {
 test_that("fails well", {
   skip_on_cran()
 
-  expect_error(nsr(), "argument \"species\" is missing")
+  expect_error(nsr(), "argument \"country\" is missing")
   expect_equal(NROW(nsr(species = "adadfd", country = "United States")), 1)
 })

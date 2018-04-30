@@ -21,3 +21,24 @@
 #'  \item Integrated Taxonomic Information Service (http://www.itis.gov/)
 #' }
 NULL
+
+#' Vector of country names for use with NSR
+#'
+#' @format A vector of countries of length 251
+#' @name nsr_countries
+#' @docType data
+#' @keywords data
+NULL
+
+#' NSR political divisions
+#'
+#' @format A data frame with 73 rows and 2 variables:
+#' \describe{
+#'   \item{country}{Country name}
+#'   \item{state_province}{State or province name}
+#' }
+#' 
+#' @name nsr_pol_divisions
+#' @docType data
+#' @keywords data
+NULL
