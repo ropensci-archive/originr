@@ -4,8 +4,8 @@
 \alias{eol}
 \title{Search for presence of taxonomic names in EOL invasive species databases.}
 \usage{
-eol(name, dataset = "all", searchby = grep, page = NULL,
-  per_page = NULL, key = NULL, messages = TRUE, count = FALSE, ...)
+eol(name, dataset = "all", searchby = grep, page = NULL, per_page = 500,
+  key = NULL, messages = TRUE, count = FALSE, ...)
 }
 \arguments{
 \item{name}{A taxonomic name, or a vector of names.}
@@ -19,7 +19,7 @@ See the Details for what each dataset ID.}
 allows you to fetch more pages of results if there are more than 30 matches
 (Default: 1)}
 
-\item{per_page}{Results to get per page}
+\item{per_page}{Results to get per page. Default: 500}
 
 \item{key}{Your EOL API key; loads from .Rprofile.}
 

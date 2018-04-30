@@ -10,7 +10,7 @@
 #' @param page A maximum of 30 results are returned per page. This parameter
 #' allows you to fetch more pages of results if there are more than 30 matches
 #' (Default: 1)
-#' @param per_page Results to get per page
+#' @param per_page Results to get per page. Default: 500
 #' @param key Your EOL API key; loads from .Rprofile.
 #' @param messages (logical) If \code{TRUE} the actual taxon queried is printed 
 #' on the console.
@@ -88,7 +88,7 @@
 #' eol(name='Sargassum', dataset='gisd', verbose = TRUE)
 #' }
 eol <- function(name, dataset="all", searchby = grep, page=NULL,
-  per_page=NULL, key = NULL, messages=TRUE, count=FALSE, ...) {
+  per_page=500, key = NULL, messages=TRUE, count=FALSE, ...) {
 
   if (any(nchar(name) < 1)) stop("'name' must be longer than 0 characters")
   if (is.null(dataset)) stop("please provide a dataset name")
@@ -101,12 +101,12 @@ eol <- function(name, dataset="all", searchby = grep, page=NULL,
            i3n = 55176,
            mineps = 55331)
 
-  args <- orc(list(id = datasetid, page = page, per_page = 500,
-                   filter = 'taxa'))
+  args <- orc(list(page = page, per_page = 500, filter = 'taxa'))
+  path <- sprintf("/api/collections/1.0/%s.json", datasetid)
 
-  cli <- crul::HttpClient$new(url = 'http://eol.org/api/collections/1.0.json', 
+  cli <- crul::HttpClient$new(url = 'http://eol.org', 
     opts = list(...))
-  tt <- cli$get(query = args)
+  tt <- cli$get(path, query = args)
   tt$raise_for_status()
   res <- jsonlite::fromJSON(tt$parse("UTF-8"), FALSE)
   data_init <- res$collection_items
@@ -117,9 +117,8 @@ eol <- function(name, dataset="all", searchby = grep, page=NULL,
   if (!is.null(pages_get)) {
     out <- list()
     for (i in pages_get) {
-      args <- orc(list(id = datasetid, page = i, per_page = 500,
-                       filter = 'taxa'))
-      tt <- cli$get(query = args)
+      args <- orc(list(page = i, per_page = 500, filter = 'taxa'))
+      tt <- cli$get(path, query = args)
       tt$raise_for_status()
       res <- jsonlite::fromJSON(tt$parse("UTF-8"), FALSE)
       out[[i]] <- res$collection_items
@@ -142,6 +141,7 @@ eol <- function(name, dataset="all", searchby = grep, page=NULL,
   df$db <- dataset
   names(df)[c(1,3)] <- c("searched_name","eol_object_id")
   row.names(df) <- NULL
+  if (NROW(df) > 0) df <- df[!duplicated(df), ]
   if (!count) df else length(stats::na.omit(df$eol_object_id))
 }
 
