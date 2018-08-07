@@ -2,7 +2,7 @@ originr
 ========
 
 
-
+[![cran checks](https://cranchecks.info/badges/worst/originr)](https://cranchecks.info/pkgs/originr)
 [![Build Status](https://travis-ci.org/ropensci/originr.svg?branch=master)](https://travis-ci.org/ropensci/originr)
 [![Build status](https://ci.appveyor.com/api/projects/status/58v02qxbi67lgf0x?svg=true)](https://ci.appveyor.com/project/sckott/originr)
 [![codecov.io](https://codecov.io/github/ropensci/originr/coverage.svg?branch=master)](https://codecov.io/github/ropensci/originr?branch=master)
