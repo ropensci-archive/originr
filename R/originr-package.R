@@ -1,4 +1,5 @@
-#' originr - Species Origin Data
+#' @title originr
+#' @description Species Origin Data
 #'
 #' @importFrom crul HttpClient
 #' @importFrom jsonlite fromJSON

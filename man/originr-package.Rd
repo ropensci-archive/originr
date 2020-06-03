@@ -4,9 +4,9 @@
 \name{originr-package}
 \alias{originr-package}
 \alias{originr}
-\title{originr - Species Origin Data}
+\title{originr}
 \description{
-originr - Species Origin Data
+Species Origin Data
 }
 \section{Data sources in the package}{
 
