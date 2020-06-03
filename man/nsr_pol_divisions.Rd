@@ -4,11 +4,13 @@
 \name{nsr_pol_divisions}
 \alias{nsr_pol_divisions}
 \title{NSR political divisions}
-\format{A data frame with 73 rows and 2 variables:
+\format{
+A data frame with 73 rows and 2 variables:
 \describe{
 \item{country}{Country name}
 \item{state_province}{State or province name}
-}}
+}
+}
 \description{
 NSR political divisions
 }

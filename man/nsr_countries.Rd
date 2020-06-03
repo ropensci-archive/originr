@@ -4,7 +4,9 @@
 \name{nsr_countries}
 \alias{nsr_countries}
 \title{Vector of country names for use with NSR}
-\format{A vector of countries of length 251}
+\format{
+A vector of countries of length 251
+}
 \description{
 Vector of country names for use with NSR
 }

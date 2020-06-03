@@ -4,8 +4,15 @@
 \alias{griis}
 \title{Check invasive species status for a species from GRIIS database}
 \usage{
-griis(name = NULL, impacts = NULL, verified = NULL, country = NULL,
-  kindom = NULL, type = NULL, ...)
+griis(
+  name = NULL,
+  impacts = NULL,
+  verified = NULL,
+  country = NULL,
+  kindom = NULL,
+  type = NULL,
+  ...
+)
 }
 \arguments{
 \item{name}{character; a string with the scientific species name in the

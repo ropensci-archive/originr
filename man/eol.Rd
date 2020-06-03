@@ -5,8 +5,17 @@
 \alias{eol_invasive_data}
 \title{Search for presence of taxonomic names in EOL invasive species databases.}
 \usage{
-eol(name, dataset = "all", searchby = grep, page = NULL, per_page = 500,
-  key = NULL, messages = TRUE, count = FALSE, ...)
+eol(
+  name,
+  dataset = "all",
+  searchby = grep,
+  page = NULL,
+  per_page = 500,
+  key = NULL,
+  messages = TRUE,
+  count = FALSE,
+  ...
+)
 
 eol_invasive_data(...)
 }
