@@ -54,7 +54,7 @@ is_native <- function(sp, where, region = c("america", "europe"), ...) {
                       "Hawaii", "Mexico")) {
       stop("where must be one America region, see help for accepted names", call. = FALSE)
     }
-    tsn_ <- taxize::get_tsn(searchterm = sp, ...)[1]
+    tsn_ <- taxize::get_tsn(sp, ...)[1]
     if (is.na(tsn_)) {
       Out <- "species not in itis"
     } else {
