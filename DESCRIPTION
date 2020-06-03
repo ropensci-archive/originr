@@ -15,7 +15,7 @@ Authors@R: c(
     person("Ignasi", "Bartomeus", role = "aut", email = "nacho.bartomeus@gmail.com")
     )
 License: MIT + file LICENSE
-URL: https://github.com/ropensci/originr
+URL: https://docs.ropensci.org/originr, https://github.com/ropensci/originr
 BugReports: https://github.com/ropensci/originr/issues
 Roxygen: list(markdown = TRUE)
 Encoding: UTF-8
