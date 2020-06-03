@@ -1,0 +1,46 @@
+http_interactions:
+- request:
+    method: get
+    uri: http://rbg-web2.rbge.org.uk/cgi-bin/nph-readbtree.pl/feout?FAMILY_XREF=&GENUS_XREF=asdfadsf&SPECIES_XREF=NA&TAXON_NAME_XREF=&RANK=
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      User-Agent: libcurl/7.70.0 r-curl/4.3 crul/0.9.0
+      Accept-Encoding: gzip, deflate
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: '200'
+      message: OK
+      explanation: Request fulfilled, document follows
+    headers:
+      status: HTTP/1.0 200 Script results follow
+      server: nphreadbtree.pl/1.0 via CERN/3.0
+      content-type: text/html
+    body:
+      encoding: UTF-8
+      file: no
+      string: "<HTML>\r\n<HEAD>\r\n<TITLE>Flora Europaea Search Results</TITLE>\r\n<script
+        type=\"text/javascript\"> SearchStatus=0</script>\r\n<script type=\"text/javascript\"
+        src=\"https://rbg-web2.rbge.org.uk/exportscripts/popup.js\"></script>\r\n<link
+        rel=\"stylesheet\" type=\"text/css\" href=\"https://rbg-web2.rbge.org.uk/cgi-bin/getcss.pl?dataset=&css=feout\"
+        />\r\n<link rel=\"stylesheet\" type=\"text/css\" href=\"https://rbg-web2.rbge.org.uk/exportscripts/htmlexport.css\"
+        />\r\n\r\n</HEAD>\r\n<BODY><div id=\"HTMLEXPOTOOLTIP\"  style=\"display: none;
+        position: absolute;z-index: 1;background-color: #F4F4D0;border: 1px black
+        solid; padding: 5px;font-family: Arial;font-size: 10pt;\"></div><div id=\"HTMLEXPOPOPUP\"
+        style=\"display: none; position: absolute;z-index: 1;background-color: #F4F4D0;border:
+        1px black solid; padding: 5px;font-family: Arial;font-size: 10pt;\"></div>\r\n<TABLE
+        WIDTH=100% BORDER=\"0\">\r\n<TD ALIGN = right>\r\n<IMG SRC=\"/FE/siblogo3.gif\"
+        ALT=\"Royal Botanic Garden Edinburgh\">\r\n</TD>\r\n</TABLE><HR>\r\n<CENTER><H1><I>Flora
+        Europaea</I> Search Results</H1>\r\nClick <A HREF=\"http:/FE/diacriticals.html\">here</A>
+        for information on the format of the data in this page.</CENTER>\r\n<HR>\r\n<p><span
+        style=\"text-align: center;\">Hits matching <b> NA and  asdfadsf</b></span></p><hr
+        class=\"HTMLEXPO\"/> <p><span style=\"text-align: center;\">No matches found</span></p>\r\n\r\n\r\n<TABLE>\r\n
+        <TR>\r\n  <TD>\r\n   <a href=\"https:/FE/fe.html\">New query</a> | \r\n  </TD>\r\n
+        <TD>\r\n  <A HREF=\"http://www.rbge.org.uk\"> Return to the RBGE home page</A>\r\n
+        </TD>\r\n</TR>\r\n</TABLE>\r\n<P>\r\n<HR>\r\nRoyal Botanic Garden Edinburgh,
+        Inverleith Row, Edinburgh, EH3 5LR, United Kingdom.<BR>\r\nTel. +44 (0)131
+        552 7171  ~   Fax +44 (0)131 552 0382\r\n\r\n</BODY>\r\n</HTML>\r\n"
+  recorded_at: 2020-06-03 21:06:59 GMT
+  recorded_with: vcr/0.5.4, webmockr/0.6.2

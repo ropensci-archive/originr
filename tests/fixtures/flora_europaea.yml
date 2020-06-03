@@ -1,0 +1,131 @@
+http_interactions:
+- request:
+    method: get
+    uri: http://rbg-web2.rbge.org.uk/cgi-bin/nph-readbtree.pl/feout?FAMILY_XREF=&GENUS_XREF=Carpobrotus&SPECIES_XREF=edulis&TAXON_NAME_XREF=&RANK=
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      User-Agent: libcurl/7.70.0 r-curl/4.3 crul/0.9.0
+      Accept-Encoding: gzip, deflate
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: '200'
+      message: OK
+      explanation: Request fulfilled, document follows
+    headers:
+      status: HTTP/1.0 200 Script results follow
+      server: nphreadbtree.pl/1.0 via CERN/3.0
+      content-type: text/html
+    body:
+      encoding: UTF-8
+      file: no
+      string: "<HTML>\r\n<HEAD>\r\n<TITLE>Flora Europaea Search Results</TITLE>\r\n<script
+        type=\"text/javascript\"> SearchStatus=1</script>\r\n<script type=\"text/javascript\"
+        src=\"https://rbg-web2.rbge.org.uk/exportscripts/popup.js\"></script>\r\n<link
+        rel=\"stylesheet\" type=\"text/css\" href=\"https://rbg-web2.rbge.org.uk/cgi-bin/getcss.pl?dataset=&css=feout\"
+        />\r\n<link rel=\"stylesheet\" type=\"text/css\" href=\"https://rbg-web2.rbge.org.uk/exportscripts/htmlexport.css\"
+        />\r\n\r\n</HEAD>\r\n<BODY><div id=\"HTMLEXPOTOOLTIP\"  style=\"display: none;
+        position: absolute;z-index: 1;background-color: #F4F4D0;border: 1px black
+        solid; padding: 5px;font-family: Arial;font-size: 10pt;\"></div><div id=\"HTMLEXPOPOPUP\"
+        style=\"display: none; position: absolute;z-index: 1;background-color: #F4F4D0;border:
+        1px black solid; padding: 5px;font-family: Arial;font-size: 10pt;\"></div>\r\n<TABLE
+        WIDTH=100% BORDER=\"0\">\r\n<TD ALIGN = right>\r\n<IMG SRC=\"/FE/siblogo3.gif\"
+        ALT=\"Royal Botanic Garden Edinburgh\">\r\n</TD>\r\n</TABLE><HR>\r\n<CENTER><H1><I>Flora
+        Europaea</I> Search Results</H1>\r\nClick <A HREF=\"http:/FE/diacriticals.html\">here</A>
+        for information on the format of the data in this page.</CENTER>\r\n<HR>\r\n<table
+        class=\"pagepicker\" cellpadding=\"0\">\r\n<tr class=\"pagepicker\">\r\n<td
+        class=\"pagepicker\">\r\npage 1 of 1 showing <p style=\"text-align: center\">Hits
+        1 to 4 of 4 matching <b> edulis and  Carpobrotus</b></p></td>\r\n<td>\r\n&nbsp;</td><td></td>\r\n</tr>\r\n</table>\r\n<table
+        class=\"HTMLEXPO HTMLEXPO_RESULTSBODY\">\r\n<tr>\r\n<td class=\"HTMLEXPO rowcnt\"><p><a
+        name=\"1\">1</a></p></td><td class=\"htmlexpodata\"><span class=\"HTMLEXPO_\"><b><i>Carpobrotus
+        edulis</i> (L.) N.E.Br.</b><br />Family: Aizoaceae<br />Genus: Carpobrotus<br
+        />Species: edulis<br />Rank: species<br />Reference: Gen. S. Afr. Fl. Pl.
+        ed. 1 249 (1926)<br />Name status: <b>Accepted</b><br />Synonym(s): <ul><li><i>Mesembryanthemum
+        edule</i> L.</li></ul><br /><a href=\"http://rbg-web2.rbge.org.uk/FE/data/countries\">Distribution:</a>
+        [Al Az Be Bl Br Co Ga Gr Hb Hs It Lu Si]<br />Cultivated, and naturalized
+        in S. &amp; W. Europe, northwards to N. Wales<p /></span>\r\n</td>\r\n</tr>\r\n</table>\r\n<P><HR
+        WIDTH=25%><table class=\"HTMLEXPO HTMLEXPO_RESULTSBODY\">\r\n<tr>\r\n<td class=\"HTMLEXPO
+        rowcnt\"><p><a name=\"2\">2</a></p></td><td class=\"htmlexpodata\"><span class=\"HTMLEXPO_\"><b><i>Carpobrotus
+        edulis</i> (L.) N.E.Br. var. <i>edulis</i></b><br />Family: Aizoaceae<br />Genus:
+        Carpobrotus<br />Species: edulis<br />Rank: var.<br />Name status: <b>External</b><p
+        /></span>\r\n</td>\r\n</tr>\r\n</table>\r\n<P><HR WIDTH=25%><table class=\"HTMLEXPO
+        HTMLEXPO_RESULTSBODY\">\r\n<tr>\r\n<td class=\"HTMLEXPO rowcnt\"><p><a name=\"3\">3</a></p></td><td
+        class=\"htmlexpodata\"><span class=\"HTMLEXPO_\"><b><i>Carpobrotus edulis</i>
+        (L.) N.E.Br. var. <i>chrysophthalmus</i> C.D.Preston &amp; P.D.Sell</b><br
+        />Family: Aizoaceae<br />Genus: Carpobrotus<br />Species: edulis<br />Rank:
+        var.<br />Name status: <b>Accepted</b><br />Cultivated, and naturalized in
+        S. &amp; W. Europe, northwards to N. Wales<p /></span>\r\n</td>\r\n</tr>\r\n</table>\r\n<P><HR
+        WIDTH=25%><table class=\"HTMLEXPO HTMLEXPO_RESULTSBODY\">\r\n<tr>\r\n<td class=\"HTMLEXPO
+        rowcnt\"><p><a name=\"4\">4</a></p></td><td class=\"htmlexpodata\"><span class=\"HTMLEXPO_\"><b><i>Carpobrotus
+        edulis</i> (L.) N.E.Br. var. <i>rubescens</i> Druce</b><br />Family: Aizoaceae<br
+        />Genus: Carpobrotus<br />Species: edulis<br />Rank: var.<br />Name status:
+        <b>Accepted</b><br />Synonym(s): <ul><li><i>Carpobrotus acinaciformis</i>
+        auct. eur., non (L.) L.Bolus<br /></li><li><i>Mesembryanthemum acinaciforme</i>
+        auct. eur., non L.</li></ul><br />Cultivated, and naturalized in S. &amp;
+        W. Europe, northwards to N. Wales<p /></span>\r\n</td>\r\n</tr>\r\n</table>\r\n<P><HR
+        WIDTH=25%><p /><hr class=\"HTMLEXPO\"/>\r\n<table style=\"text-align:center;\">\r\n<tr>\r\n<td>\r\n<span
+        style=\"text-align: center;\">No more hits </span><p />\r\n</td>\r\n<td>\r\n</td>\r\n</tr>\r\n</table>\r\n\r\n<TABLE>\r\n
+        <TR>\r\n  <TD>\r\n   <a href=\"https:/FE/fe.html\">New query</a> | \r\n  </TD>\r\n
+        <TD>\r\n  <A HREF=\"http://www.rbge.org.uk\"> Return to the RBGE home page</A>\r\n
+        </TD>\r\n</TR>\r\n</TABLE>\r\n<P>\r\n<HR>\r\nRoyal Botanic Garden Edinburgh,
+        Inverleith Row, Edinburgh, EH3 5LR, United Kingdom.<BR>\r\nTel. +44 (0)131
+        552 7171  ~   Fax +44 (0)131 552 0382\r\n\r\n</BODY>\r\n</HTML>\r\n"
+  recorded_at: 2020-06-03 21:06:58 GMT
+  recorded_with: vcr/0.5.4, webmockr/0.6.2
+- request:
+    method: get
+    uri: http://rbg-web2.rbge.org.uk/cgi-bin/nph-readbtree.pl/feout?FAMILY_XREF=&GENUS_XREF=Rosmarinus&SPECIES_XREF=officinalis&TAXON_NAME_XREF=&RANK=
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      User-Agent: libcurl/7.70.0 r-curl/4.3 crul/0.9.0
+      Accept-Encoding: gzip, deflate
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: '200'
+      message: OK
+      explanation: Request fulfilled, document follows
+    headers:
+      status: HTTP/1.0 200 Script results follow
+      server: nphreadbtree.pl/1.0 via CERN/3.0
+      content-type: text/html
+    body:
+      encoding: UTF-8
+      file: no
+      string: "<HTML>\r\n<HEAD>\r\n<TITLE>Flora Europaea Search Results</TITLE>\r\n<script
+        type=\"text/javascript\"> SearchStatus=1</script>\r\n<script type=\"text/javascript\"
+        src=\"https://rbg-web2.rbge.org.uk/exportscripts/popup.js\"></script>\r\n<link
+        rel=\"stylesheet\" type=\"text/css\" href=\"https://rbg-web2.rbge.org.uk/cgi-bin/getcss.pl?dataset=&css=feout\"
+        />\r\n<link rel=\"stylesheet\" type=\"text/css\" href=\"https://rbg-web2.rbge.org.uk/exportscripts/htmlexport.css\"
+        />\r\n\r\n</HEAD>\r\n<BODY><div id=\"HTMLEXPOTOOLTIP\"  style=\"display: none;
+        position: absolute;z-index: 1;background-color: #F4F4D0;border: 1px black
+        solid; padding: 5px;font-family: Arial;font-size: 10pt;\"></div><div id=\"HTMLEXPOPOPUP\"
+        style=\"display: none; position: absolute;z-index: 1;background-color: #F4F4D0;border:
+        1px black solid; padding: 5px;font-family: Arial;font-size: 10pt;\"></div>\r\n<TABLE
+        WIDTH=100% BORDER=\"0\">\r\n<TD ALIGN = right>\r\n<IMG SRC=\"/FE/siblogo3.gif\"
+        ALT=\"Royal Botanic Garden Edinburgh\">\r\n</TD>\r\n</TABLE><HR>\r\n<CENTER><H1><I>Flora
+        Europaea</I> Search Results</H1>\r\nClick <A HREF=\"http:/FE/diacriticals.html\">here</A>
+        for information on the format of the data in this page.</CENTER>\r\n<HR>\r\n<table
+        class=\"pagepicker\" cellpadding=\"0\">\r\n<tr class=\"pagepicker\">\r\n<td
+        class=\"pagepicker\">\r\npage 1 of 1 showing <p style=\"text-align: center\">Hits
+        1 to 1 of 1 matching <b> officinalis and  Rosmarinus</b></p></td>\r\n<td>\r\n&nbsp;</td><td></td>\r\n</tr>\r\n</table>\r\n<table
+        class=\"HTMLEXPO HTMLEXPO_RESULTSBODY\">\r\n<tr>\r\n<td class=\"HTMLEXPO rowcnt\"><p><a
+        name=\"1\">1</a></p></td><td class=\"htmlexpodata\"><span class=\"HTMLEXPO_\"><b><i>Rosmarinus
+        officinalis</i> L.</b><br />Family: Labiatae<br />Genus: Rosmarinus<br />Species:
+        officinalis<br />Rank: species<br />Reference: Sp. Pl. ed. 1 23 (1753)<br
+        />Name status: <b>Accepted</b><br />Synonym(s): <ul><li><i>Rosmarinus laxiflorus</i>
+        No&#235; ex Lange</li></ul><br /><a href=\"http://rbg-web2.rbge.org.uk/FE/data/countries\">Distribution:</a>
+        Bl Co *Cr Ga Gr Hs It Ju Lu Sa Si [Al Az Bu He Rs(K)]<p /></span>\r\n</td>\r\n</tr>\r\n</table>\r\n<P><HR
+        WIDTH=25%><p /><hr class=\"HTMLEXPO\"/>\r\n<table style=\"text-align:center;\">\r\n<tr>\r\n<td>\r\n<span
+        style=\"text-align: center;\">No more hits </span><p />\r\n</td>\r\n<td>\r\n</td>\r\n</tr>\r\n</table>\r\n\r\n<TABLE>\r\n
+        <TR>\r\n  <TD>\r\n   <a href=\"https:/FE/fe.html\">New query</a> | \r\n  </TD>\r\n
+        <TD>\r\n  <A HREF=\"http://www.rbge.org.uk\"> Return to the RBGE home page</A>\r\n
+        </TD>\r\n</TR>\r\n</TABLE>\r\n<P>\r\n<HR>\r\nRoyal Botanic Garden Edinburgh,
+        Inverleith Row, Edinburgh, EH3 5LR, United Kingdom.<BR>\r\nTel. +44 (0)131
+        552 7171  ~   Fax +44 (0)131 552 0382\r\n\r\n</BODY>\r\n</HTML>\r\n"
+  recorded_at: 2020-06-03 21:06:58 GMT
+  recorded_with: vcr/0.5.4, webmockr/0.6.2

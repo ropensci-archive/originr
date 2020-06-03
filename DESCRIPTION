@@ -8,7 +8,7 @@ Description: Get species origin data (whether species is native/invasive) from t
     (<http://bien.nceas.ucsb.edu/bien/tools/nsr/nsr-ws/>), Integrated Taxonomic
     Information Service (<http://www.itis.gov/>), and Global Register of
     Introduced and Invasive Species (<http://www.griis.org/>).
-Version: 0.3.0.9101
+Version: 0.3.2.91
 Authors@R: c(
     person("Scott", "Chamberlain", role = c("aut", "cre"), 
       email = "myrmecocystus@gmail.com", comment = c(ORCID="0000-0003-1444-9135")),
@@ -18,6 +18,7 @@ License: MIT + file LICENSE
 URL: https://github.com/ropensci/originr
 BugReports: https://github.com/ropensci/originr/issues
 Roxygen: list(markdown = TRUE)
+Encoding: UTF-8
 LazyLoad: yes
 LazyData: yes
 Imports:
@@ -28,8 +29,8 @@ Imports:
     taxize (>= 0.9.0)
 Suggests:
     testthat,
-    roxygen2 (>= 6.0.1)
-RoxygenNote: 6.0.1
+    vcr
+RoxygenNote: 7.1.0
 X-schema.org-applicationCategory: Biology
 X-schema.org-keywords: species, native, invasive, origin, web, API, eol, gisd, nsr, itis, griis
 X-schema.org-isPartOf: https://ropensci.org

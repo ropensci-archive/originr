@@ -1,0 +1,72 @@
+http_interactions:
+- request:
+    method: get
+    uri: https://api.gbif.org/v1/species?datasetKey=b351a324-77c4-41c9-a909-f30f77268bc4&name=Carpobrotus%20edulis
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      User-Agent: libcurl/7.70.0 r-curl/4.3 crul/0.9.0
+      Accept-Encoding: gzip, deflate
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: '200'
+      message: OK
+      explanation: Request fulfilled, document follows
+    headers:
+      status: HTTP/1.1 200 OK
+      date: Wed, 03 Jun 2020 21:12:18 GMT
+      content-type: application/json
+      access-control-allow-origin: '*'
+      access-control-allow-methods: HEAD, GET, POST, DELETE, PUT, OPTIONS
+      server: Jetty(9.3.z-SNAPSHOT)
+      cache-control: public, max-age=3601
+      x-varnish: '101090163'
+      age: '0'
+      via: 1.1 varnish (Varnish/5.2)
+      accept-ranges: bytes
+      transfer-encoding: chunked
+      connection: keep-alive
+    body:
+      encoding: UTF-8
+      file: no
+      string: '{"offset":0,"limit":20,"endOfRecords":true,"results":[{"key":100221500,"nubKey":3084842,"nameKey":2052609,"taxonID":"1010","kingdom":"Plantae","phylum":"Magnoliophyta","kingdomKey":132916967,"phylumKey":132916985,"datasetKey":"b351a324-77c4-41c9-a909-f30f77268bc4","parentKey":132916985,"parent":"Magnoliophyta","scientificName":"Carpobrotus
+        edulis","canonicalName":"Carpobrotus edulis","authorship":"","nameType":"SCIENTIFIC","origin":"SOURCE","taxonomicStatus":"ACCEPTED","nomenclaturalStatus":[],"numDescendants":0,"references":"http://www.invasivespecies.net/database/species/ecology.asp?si=1010&fr=1&sts=&lang=EN","lastCrawled":"2019-09-07T22:18:50.867+0000","lastInterpreted":"2017-08-25T14:34:29.147+0000","issues":[],"synonym":false}]}'
+  recorded_at: 2020-06-03 21:12:20 GMT
+  recorded_with: vcr/0.5.4, webmockr/0.6.2
+- request:
+    method: get
+    uri: https://api.gbif.org/v1/species?datasetKey=b351a324-77c4-41c9-a909-f30f77268bc4&name=Rosmarinus%20officinalis
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      User-Agent: libcurl/7.70.0 r-curl/4.3 crul/0.9.0
+      Accept-Encoding: gzip, deflate
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: '200'
+      message: OK
+      explanation: Request fulfilled, document follows
+    headers:
+      status: HTTP/1.1 200 OK
+      date: Wed, 03 Jun 2020 21:12:20 GMT
+      content-type: application/json
+      access-control-allow-origin: '*'
+      access-control-allow-methods: HEAD, GET, POST, DELETE, PUT, OPTIONS
+      server: Jetty(9.3.z-SNAPSHOT)
+      cache-control: public, max-age=3601
+      x-varnish: '112001635'
+      age: '0'
+      via: 1.1 varnish (Varnish/5.2)
+      accept-ranges: bytes
+      content-length: '56'
+      connection: keep-alive
+    body:
+      encoding: UTF-8
+      file: no
+      string: '{"offset":0,"limit":20,"endOfRecords":true,"results":[]}'
+  recorded_at: 2020-06-03 21:12:20 GMT
+  recorded_with: vcr/0.5.4, webmockr/0.6.2

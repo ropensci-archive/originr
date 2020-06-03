@@ -1,0 +1,69 @@
+http_interactions:
+- request:
+    method: get
+    uri: https://www.itis.gov/ITISWebService/jsonservice/getITISTermsFromScientificName?srchKey=Carpobrotus%20edulis
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      User-Agent: libcurl/7.70.0 r-curl/4.3 crul/0.9.0
+      Accept-Encoding: gzip, deflate
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: '200'
+      message: OK
+      explanation: Request fulfilled, document follows
+    headers:
+      connection: keep-alive
+      content-length: '318'
+      content-type: text/json;charset=ISO-8859-1
+      date: Wed, 03 Jun 2020 21:04:24 GMT
+      status: 'HTTP/1.1 200 '
+      strict-transport-security:
+      - max-age=63072000; includeSubdomains; preload
+      - max-age=63072000; includeSubdomains; preload
+      x-application: itis_webservices
+      x-node-name: not shown
+      x-upstream-member: not shown
+    body:
+      encoding: UTF-8
+      file: no
+      string: |
+        {"class":"gov.usgs.itis.itis_service.data.SvcItisTermList","itisTerms":[{"author":"(L.) N.E. Br.","class":"gov.usgs.itis.itis_service.data.SvcItisTerm","commonNames":["freeway iceplant","Hottentot-fig"],"nameUsage":"accepted","scientificName":"Carpobrotus edulis","tsn":"19934"}],"requestedName":"Carpobrotus edulis"}
+  recorded_at: 2020-06-03 21:04:25 GMT
+  recorded_with: vcr/0.5.4, webmockr/0.6.2
+- request:
+    method: get
+    uri: https://www.itis.gov/ITISWebService/jsonservice/getJurisdictionalOriginFromTSN?tsn=19934
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      User-Agent: libcurl/7.70.0 r-curl/4.3 crul/0.9.0
+      Accept-Encoding: gzip, deflate
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: '200'
+      message: OK
+      explanation: Request fulfilled, document follows
+    headers:
+      connection: keep-alive
+      content-length: '275'
+      content-type: text/json;charset=ISO-8859-1
+      date: Wed, 03 Jun 2020 21:04:25 GMT
+      status: 'HTTP/1.1 200 '
+      strict-transport-security:
+      - max-age=63072000; includeSubdomains; preload
+      - max-age=63072000; includeSubdomains; preload
+      x-application: itis_webservices
+      x-node-name: not shown
+      x-upstream-member: not shown
+    body:
+      encoding: UTF-8
+      file: no
+      string: |
+        {"class":"gov.usgs.itis.itis_service.data.SvcTaxonJurisdictionalOriginList","jurisdictionalOrigins":[{"class":"gov.usgs.itis.itis_service.data.SvcTaxonJurisdictionalOrigin","jurisdictionValue":"Continental US","origin":"Introduced","updateDate":"2000-03-15"}],"tsn":"19934"}
+  recorded_at: 2020-06-03 21:04:25 GMT
+  recorded_with: vcr/0.5.4, webmockr/0.6.2

@@ -1,10 +1,10 @@
-context("gisd functions")
-
-test_that("gisd works", {
+test_that("gisd", {
   skip_on_cran()
 
   sp <- c("Carpobrotus edulis", "Rosmarinus officinalis")
-  aa <- gisd(sp, messages = FALSE)
+  vcr::use_cassette("gisd", {
+    aa <- gisd(sp, messages = FALSE)
+  })
 
   expect_is(aa, "list")
   expect_named(aa, sp)
@@ -12,11 +12,13 @@ test_that("gisd works", {
   expect_is(aa[[2]], "list")
 })
 
-test_that("fails well - species not found when searching GBIF", {
+test_that("gisd fails well - species not found when searching GBIF", {
   skip_on_cran()
 
   sp <- "asdfadsf"
-  aa <- gisd(sp, messages = FALSE)
+  vcr::use_cassette("gisd_not_found", {
+    aa <- gisd(sp, messages = FALSE)
+  })
 
   expect_is(aa, "list")
   expect_named(aa, sp)

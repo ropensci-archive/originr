@@ -1,0 +1,141 @@
+http_interactions:
+- request:
+    method: get
+    uri: http://www.griis.org/export_csv.php?name=Carpobrotus%20edulis
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      User-Agent: libcurl/7.70.0 r-curl/4.3 crul/0.9.0
+      Accept-Encoding: gzip, deflate
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: '200'
+      message: OK
+      explanation: Request fulfilled, document follows
+    headers:
+      status: HTTP/1.1 200 OK
+      date: Wed, 03 Jun 2020 21:10:38 GMT
+      server: Apache
+      content-disposition: attachment; filename=export_griis.csv
+      content-length: '9050'
+      x-powered-by: PleskLin
+      cache-control: max-age=60, private, proxy-revalidate
+      connection: close
+      content-type: application/download
+    body:
+      encoding: UTF-8
+      file: no
+      string: "\"Species\";\"Authority\";\"Country\";\"Kingdom\";\"Environment/System\";\"Origin\";\"Evidence
+        of Impacts (Y/N)\";\"Verification (Y/N)\";\"Date\";\"Source\";\r\n\"Carpobrotus
+        edulis\";\"N.E. Br. (L.)\";\"Albania\";\"Plantae\";\"terrestrial\";\"Alien\";\"No\";\"Yes\";\"2017\";\"CAB
+        International (2014). CABI Invasive Species Compendium (ISC). \r\nBarina,
+        Z., Rakaj, M., Somoygi, G., Eros-Honti, Z., Pifko, D (2014). The alien ?ora
+        of Albania: history, current status and future trends. Weed Research. 54,
+        196-215. \r\n\";\r\n\"Carpobrotus edulis\";\"N.E. Br. (L.)\";\"Algeria\";\"Plantae\";\"terrestrial\";\"Alien\";\"No\";\"Yes\";\"2017\";\"Zedam,
+        A. (2013). Zedam, A. Pers.comm July 2013. \r\n\";\r\n\"Carpobrotus edulis\";\"N.E.
+        Br. (L.)\";\"Angola\";\"Plantae\";\"terrestrial\";\"Alien\";\"No\";\"No\";\"2017\";\"Republic
+        of Angola, Ministry of Environment (2009). Framework report on Angola's Biodiversity.
+        \r\n\";\r\n\"Carpobrotus edulis\";\"N.E. Br. (L.)\";\"Argentina\";\"Plantae\";\"terrestrial\";\"Alien\";\"No\";\"No\";\"2017\";\"CAB
+        International (2014). CABI Invasive Species Compendium (ISC). \r\nGhersa,
+        Claudio M., de la Fuente, Elba, Suarez, Susana, Leon, Rolando J. C. (2002).
+        Woody species invasion in the Rolling Pampa grasslands, Argentina. Agriculture
+        Ecosystems & Environment. 88, 3: 271-278. \r\n\";\r\n\"Carpobrotus edulis\";\"N.E.
+        Br. (L.)\";\"Australia\";\"Plantae\";\"terrestrial\";\"Alien\";\"No\";\"Yes\";\"2017\";\"Randall,
+        R.P. (2007). The Introduced Flora of Australia and its Weed Status. \r\n\";\r\n\"Carpobrotus
+        edulis\";\"N.E. Br. (L.)\";\"Belgium\";\"Plantae\";\"terrestrial\";\"Alien\";\"No\";\"Yes\";\"2017\";\"''RINSE
+        - Reducing the Impact of Non-Native Species in Europe'' (2015). ''RINSE -
+        Reducing the Impact of Non-Native Species in Europe''. \r\n\";\r\n\"Carpobrotus
+        edulis\";\"N.E. Br. (L.)\";\"Bermuda\";\"Plantae\";\"terrestrial\";\"Alien\";\"No\";\"No\";\"2017\";\"Invasive
+        Species Specialist Group (2015). Global Invasive Species Database. \r\n\";\r\n\"Carpobrotus
+        edulis\";\"N.E. Br. (L.)\";\"Bolivia\";\"Plantae\";\"terrestrial\";\"Alien\";\"No\";\"No\";\"2017\";\"CAB
+        International (2014). CABI Invasive Species Compendium (ISC). \r\n\";\r\n\"Carpobrotus
+        edulis\";\"N.E. Br. (L.)\";\"Cabo Verde\";\"Plantae\";\"terrestrial\";\"Alien\";\"Yes\";\"Yes\";\"2017\";\"CAB
+        International (2014). CABI Invasive Species Compendium (ISC). \r\n\";\r\n\"Carpobrotus
+        edulis\";\"N.E. Br. (L.)\";\"Chile- Juan Fernandez Islands\";\"Plantae\";\"terrestrial\";\"Alien\";\"No\";\"Yes\";\"2017\";\"Swenson,
+        U., Stuessey, T. F., Baeza, M., Crawford, D. J. (1997). New and Historical
+        Plant Introductions, and Potential Pests in the Juan Fernandez Islands, Chile
+        (http://www.iucnredlist.org/details/57291/0)Pacific Science. 51, 3: 233-253.
+        \r\n\";\r\n\"Carpobrotus edulis\";\"N.E. Br. (L.)\";\"Croatia\";\"Plantae\";\"terrestrial\";\"Alien\";\"Yes\";\"Yes\";\"2017\";\"Mitic,
+        B. (Collaborators- I. Bor?i?, M. Milovi?, S. Bogdanovi?, I. Dujmovi?, P. Cigi?,
+        I. Re?etnik, R. ?o?tari?, N. Vukovi?, D. Hru?evar, S. Jelaska & T. Nikoli?)
+        (2013). Invasive Alien Plans in Croatia. International seminar ?Lists of  IAS
+        \ plants in the Balkans with an EPPO  training course on the priorization
+        process for IAS plants, Belgrade, July 08-11, 2013. \r\n\";\r\n\"Carpobrotus
+        edulis\";\"N.E. Br. (L.)\";\"Cyprus\";\"Plantae\";\"terrestrial\";\"Alien\";\"No\";\"Yes\";\"2017\";\"DAISIE
+        (Delivering Alien Invasive Species Inventories for Europe) (2006). Delivering
+        Alien Invasive Species Inventories for Europe. \r\nHand R., Hadjikyriakou
+        G. N. & Christodoulou C. S. (ed.) (2011). Flora of Cyprus ? a dynamic checklist..
+        \r\n\";\r\n\"Carpobrotus edulis\";\"N.E. Br. (L.)\";\"France\";\"Plantae\";\"terrestrial\";\"Alien\";\"No\";\"No\";\"2017\";\"DAISIE
+        (Delivering Alien Invasive Species Inventories for Europe) (2006). Delivering
+        Alien Invasive Species Inventories for Europe. \r\n\";\r\n\"Carpobrotus edulis\";\"N.E.
+        Br. (L.)\";\"Greece\";\"Plantae\";\"terrestrial\";\"Alien\";\"No\";\"No\";\"2017\";\"Arianoutsou,
+        M., Bazos, I., Delipetrou, P., and Kokkoris, Y. (2010). The alien flora of
+        Greece: taxonomy, life traits and habitat. Biological Invasions. 12, 3525?3549.
+        \r\n\";\r\n\"Carpobrotus edulis\";\"N.E. Br. (L.)\";\"Ireland\";\"Plantae\";\"terrestrial\";\"Alien\";\"No\";\"Yes\";\"2017\";\"Reynolds,
+        S. C.P. (2002). A catalogue of alien plants in Ireland. \r\nThe National Biodiversity
+        Data Centre (2014). National Invasive Species Database. \r\n\";\r\n\"Carpobrotus
+        edulis\";\"N.E. Br. (L.)\";\"Israel\";\"Plantae\";\"terrestrial\";\"Alien\";\"Yes\";\"Yes\";\"2017\";\"Jean-Marc
+        Dufour-Dror (2012). Alien Invasive Plants in Israel. \r\n\";\r\n\"Carpobrotus
+        edulis\";\"N.E. Br. (L.)\";\"Malta\";\"Plantae\";\"terrestrial\";\"Alien\";\"No\";\"No\";\"2017\";\"DAISIE
+        (Delivering Alien Invasive Species Inventories for Europe) (2006). Delivering
+        Alien Invasive Species Inventories for Europe. \r\n\";\r\n\"Carpobrotus edulis\";\"N.E.
+        Br. (L.)\";\"Mexico\";\"Plantae\";\"terrestrial\";\"Alien\";\"Yes\";\"No\";\"2017\";\"CONABIO
+        (Comisi<f3>n nacional para el conocimiento y uso de la biodiversidad) (2015).
+        Draft Inventory of Alien and Invasive species. \r\n\";\r\n\"Carpobrotus edulis\";\"N.E.
+        Br. (L.)\";\"Montenegro\";\"Plantae\";\"terrestrial\";\"Alien\";\"No\";\"Yes\";\"2017\";\"Ste?evi?,
+        D. and Petrovi?, D. (2010). Preliminary list of plant invaders in Montenegro.
+        Biologica Nyssana. 1, (1-2): 35-42. \r\n\";\r\n\"Carpobrotus edulis\";\"N.E.
+        Br. (L.)\";\"New Zealand\";\"Plantae\";\"terrestrial\";\"Alien\";\"No\";\"No\";\"2017\";\"Howell,
+        C. (2008). Consolidated list of environmental weeds in New Zealand. DOC Research
+        and Development Series 292. \r\nHowell, C. and Terry, J. (2016). The creation
+        of a New Zealand weed atlas. Science for Conservation Series. 328, 21. \r\n\";\r\n\"Carpobrotus
+        edulis\";\"N.E. Br. (L.)\";\"Norway\";\"Plantae\";\"terrestrial\";\"Alien\";\"No\";\"No\";\"2017\";\"Gederaas,
+        L., Moen, T.L., Skjelseth, S. & Larsen, L.-K. (eds.). (2012). Alien species
+        in Norway?with the Norwegian Black List 2012. \r\n\";\r\n\"Carpobrotus edulis\";\"N.E.
+        Br. (L.)\";\"Portugal\";\"Plantae\";\"terrestrial\";\"Alien\";\"Yes\";\"Yes\";\"2017\";\"DAISIE
+        (Delivering Alien Invasive Species Inventories for Europe) (2006). Delivering
+        Alien Invasive Species Inventories for Europe. \r\nBorges, P.A.V., Abreu,
+        C., Aguiar, A.M.F., Carvalho, P., Jardim, R., Melo, I., Oliveira, P., S<e9>rgio,
+        C., Serrano, A.R.M. & Vieira, P. (eds.) (2008). A list of the terrestrial
+        fungi, flora and fauna of Madeira and Selvagens archipelagos.. \r\nInvasoras
+        (2014a). Invasive Plants in Portugal- 1. \r\nInvasoras (2014b). Invasive Plants
+        in Portugal- 2. \r\nBrunel, S., Brundu, G., Fried, G. (2013). Eradication
+        and control of invasive alien plants in the Mediterranean Basin: towards better
+        coordination to enhance existing initiatives. Bulletin OEPP. 43, 2: 290-308.
+        \r\nAlmeida, J. D. & H. Freitas, H. (2006). Flora ex<f3>tica de Portugal continental
+        ? uma revis<e3>o. Bot. Complut.. 30, 117-130. \r\nMaltez-Mouro, Sara, Maestre,
+        Fernando T., Freitas, Helena (2010). Weak effects of the exotic invasive Carpobrotus
+        edulis on the structure and composition of Portuguese sand-dune communities.
+        Biological Invasions. 12, 7: 2117-2130. \r\nMinistry of Environment - Portugal
+        (1999). Decreto-Lei n<ba>. 565/99. \r\n\";\r\n\"Carpobrotus edulis\";\"N.E.
+        Br. (L.)\";\"Spain\";\"Plantae\";\"terrestrial\";\"Alien\";\"Yes\";\"Yes\";\"2017\";\"''Base
+        de Datos de Especies Introducidas en Canarias'' (2014). Gobierno de Canarias.
+        \r\nNovoa, Ana, Gonzalez, Luis, Moravcova, Lenka, Pysek, Petr (2010). Effects
+        of Soil Characteristics, Allelopathy and Frugivory on Establishment of the
+        Invasive Plant Carpobrotus edulis and a Co-Occuring Native, Malcolmia littorea.
+        PLoS One. 7, 12: e53166. \r\nBrunel, S., Brundu, G., Fried, G. (2013). Eradication
+        and control of invasive alien plants in the Mediterranean Basin: towards better
+        coordination to enhance existing initiatives. Bulletin OEPP. 43, 2: 290-308.
+        \r\nTouza, Julia, Perez-Alonso, Alicia, Chas-Amil, Maria L., Dehnen-Schmutz,
+        Katharina (2014). Explaining the rank order of invasive plants by stakeholder
+        groups. Ecological Economics. 105, 330-341. \r\nGovernment of Spain (2013).
+        Boletin Oficial Del Estado. No 85 S<e1>bado 3 de agosto de 2013. \r\nSanz-Elorza,
+        M., Dana, E.D. & Sobrino, E. (2004). Atlas de las plantas al<f3>ctonas invasoras
+        de Espa<f1>a. Direcci<f3>n General para la Biodiversidad, Madrid, Spain..
+        \r\n\";\r\n\"Carpobrotus edulis\";\"N.E. Br. (L.)\";\"Tunisia\";\"Plantae\";\"terrestrial\";\"Alien\";\"Yes\";\"Yes\";\"2017\";\"Invasive
+        Species Specialist Group (2015). Global Invasive Species Database. \r\nCAB
+        International (2014). CABI Invasive Species Compendium (ISC). \r\n\";\r\n\"Carpobrotus
+        edulis\";\"N.E. Br. (L.)\";\"Turkey\";\"Plantae\";\"terrestrial\";\"Alien\";\"No\";\"No\";\"2017\";\"DAISIE
+        (Delivering Alien Invasive Species Inventories for Europe) (2006). Delivering
+        Alien Invasive Species Inventories for Europe. \r\n\";\r\n\"Carpobrotus edulis\";\"N.E.
+        Br. (L.)\";\"United Kingdom of Great Britain and Northern Ireland\";\"Plantae\";\"terrestrial\";\"Alien\";\"Yes\";\"Yes\";\"2017\";\"GB
+        Non-native Species Secretariat (2016). GB Non-native Species Information Portal.
+        \r\n\";\r\n\"Carpobrotus edulis\";\"N.E. Br. (L.)\";\"Uruguay\";\"Plantae\";\"terrestrial\";\"Alien\";\"Yes\";\"Yes\";\"2017\";\"Masciadri,
+        S., Brugnoli, E. & Muniz, P. (2010). InBUy Database of Invasive and Alien
+        Species (IAS) in Uruguay: a useful tool to confront this threat to biodiversity.
+        Biota Neotrop. 10, 4: \r\n\";\r\n\"Carpobrotus edulis x virescens\";\"\";\"Australia\";\"Plantae\";\"terrestrial\";\"Alien\";\"No\";\"Yes\";\"2017\";\"Randall,
+        R.P. (2007). The Introduced Flora of Australia and its Weed Status. \r\n\";\r\n"
+  recorded_at: 2020-06-03 21:10:43 GMT
+  recorded_with: vcr/0.5.4, webmockr/0.6.2

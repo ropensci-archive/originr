@@ -1,10 +1,9 @@
-context("griis functions")
-
-test_that("griis works", {
+test_that("griis", {
   skip_on_cran()
 
-  sp <- c("Carpobrotus edulis")
-  aa <- griis(name = sp)
+  vcr::use_cassette("griis", {
+    aa <- griis(name = "Carpobrotus edulis")
+  })
 
   expect_is(aa, "data.frame")
   expect_named(aa, c('Species', 'Authority', 'Country', 'Kingdom',

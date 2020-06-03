@@ -1,18 +1,24 @@
-context("nsr functions")
-
 test_that("nsr works", {
   skip_on_cran()
 
-  aa <- nsr("Pinus ponderosa", "United States")
+  vcr::use_cassette("nsr", {
+    aa <- nsr("Pinus ponderosa", "United States")
+  })
 
   expect_is(aa, "data.frame")
+  expect_named(aa)
   expect_equal(aa$species, "Pinus ponderosa")
-  expect_equal(aa$native_status_sources, "usda")
+  expect_equal(aa$native_status, "N")
 })
 
-test_that("fails well", {
+test_that("nsr fails well", {
   skip_on_cran()
 
   expect_error(nsr(), "argument \"country\" is missing")
-  expect_equal(NROW(nsr(species = "adadfd", country = "United States")), 1)
+
+  vcr::use_cassette("nsr_no_results", {
+    bb <- nsr(species = "adadfd", country = "United States")
+  })
+  
+  expect_equal(NROW(bb), 1)
 })
