@@ -2,6 +2,7 @@ originr
 ========
 
 
+
 [![cran checks](https://cranchecks.info/badges/worst/originr)](https://cranchecks.info/pkgs/originr)
 [![Build Status](https://travis-ci.org/ropensci/originr.svg?branch=master)](https://travis-ci.org/ropensci/originr)
 [![Build status](https://ci.appveyor.com/api/projects/status/58v02qxbi67lgf0x?svg=true)](https://ci.appveyor.com/project/sckott/originr)
@@ -13,11 +14,11 @@ Species Origin Data
 
 Data sources:
 
-* Encyclopedia of Life <http://eol.org>
-* Flora Europaea <http://rbg-web2.rbge.org.uk/FE/fe.html>
-* Global Invasive Species Database <http://www.iucngisd.org/gisd>
-* Native Species Resolver <http://bien.nceas.ucsb.edu/bien/tools/nsr/nsr-ws/>
-* Integrated Taxonomic Information Service <http://www.itis.gov/>
+* Encyclopedia of Life http://eol.org
+* Flora Europaea http://rbg-web2.rbge.org.uk/FE/fe.html
+* Global Invasive Species Database http://www.iucngisd.org/gisd
+* Native Species Resolver http://bien.nceas.ucsb.edu/bien/tools/nsr/nsr-ws/
+* Integrated Taxonomic Information Service http://www.itis.gov/
 * Global Register of Introduced and Invasive Species http://www.griis.org/
 
 ## Install
@@ -33,7 +34,7 @@ Development version
 
 
 ```r
-devtools::install_github("ropensci/originr")
+remotes::install_github("ropensci/originr")
 ```
 
 
@@ -46,25 +47,23 @@ library("originr")
 Datasets included:
 
 * `gisd100` - 100 of the World's Worst Invasive Alien Species
-(Global Invasive Species Database) <http://eol.org/collections/54500>
-* `gisd` - Global Invasive Species Database 2013 <http://eol.org/collections/54983>
+(Global Invasive Species Database) http://eol.org/collections/54500
+* `gisd` - Global Invasive Species Database 2013 http://eol.org/collections/54983
 * `isc` - Centre for Agriculture and Biosciences International Invasive Species
-Compendium (ISC) <http://eol.org/collections/55180>
+Compendium (ISC) http://eol.org/collections/55180
 * `daisie` - Delivering Alien Invasive Species Inventories for Europe (DAISIE) Species
-List <http://eol.org/collections/55179>
+List http://eol.org/collections/55179
 * `i3n` - IABIN Invasives Information Network (I3N) Species
 http://eol.org/collections/55176
-* `mineps` - Marine Invaders of the NE Pacific Species <http://eol.org/collections/55331>
+* `mineps` - Marine Invaders of the NE Pacific Species http://eol.org/collections/55331
 
 An example using `mineps`
 
 
 ```r
 eol(name='Ciona intestinalis', dataset='mineps')
-#>        searched_name                                name eol_object_id
-#> 1 Ciona intestinalis Ciona intestinalis (Linnaeus, 1767)        512629
-#>       db
-#> 1 mineps
+#>        searched_name               name eol_object_id     db
+#> 1 Ciona intestinalis Ciona intestinalis           NaN mineps
 ```
 
 ## Native Species Resolver
@@ -72,12 +71,12 @@ eol(name='Ciona intestinalis', dataset='mineps')
 
 ```r
 nsr("Pinus ponderosa", "United States")
-#>     family genus         species       country native_status
-#> 1 Pinaceae Pinus Pinus ponderosa United States             P
-#>                                                 native_status_reason
-#> 1 Present in one or more checklists for region, status not indicated
-#>   native_status_sources isIntroduced isCultivated
-#> 1                  usda            0            0
+#>     family genus         species       country state_province county_parish
+#> 1 Pinaceae Pinus Pinus ponderosa United States                             
+#>   native_status native_status_reason native_status_sources isIntroduced
+#> 1             N     Native to region                                  0
+#>   isCultivated
+#> 1            0
 ```
 
 ## Global Invasive Species Database
@@ -91,14 +90,12 @@ gisd(sp)
 #> [1] "Carpobrotus edulis"
 #> 
 #> $`Carpobrotus edulis`$alien_range
-#>  [1] "albania"          "argentina"        "australia"       
-#>  [4] "bermuda"          "chile"            "croatia"         
-#>  [7] "france"           "french polynesia" "germany"         
-#> [10] "gibraltar"        "greece"           "guernsey"        
-#> [13] "ireland"          "italy"            "malta"           
-#> [16] "mexico"           "new zealand"      "pitcairn"        
-#> [19] "portugal"         "saint helena"     "spain"           
-#> [22] "tunisia"          "united kingdom"   "united states"   
+#>  [1] "albania"          "argentina"        "australia"        "bermuda"         
+#>  [5] "chile"            "croatia"          "france"           "french polynesia"
+#>  [9] "germany"          "gibraltar"        "greece"           "guernsey"        
+#> [13] "ireland"          "italy"            "malta"            "mexico"          
+#> [17] "new zealand"      "pitcairn"         "portugal"         "saint helena"    
+#> [21] "spain"            "tunisia"          "united kingdom"   "united states"   
 #> 
 #> $`Carpobrotus edulis`$native_range
 #> character(0)
@@ -140,6 +137,8 @@ flora_europaea("Lavandula stoechas")
 * Please [report any issues or bugs](https://github.com/ropensci/originr/issues).
 * License: MIT
 * Get citation information for `originr` in R doing `citation(package = 'originr')`
-* Please note that this project is released with a [Contributor Code of Conduct](CODE_OF_CONDUCT.md). By participating in this project you agree to abide by its terms.
+* Please note that this project is released with a [Contributor Code of Conduct][coc]. By participating in this project you agree to abide by its terms.
 
-[![rofooter](http://ropensci.org/public_images/github_footer.png)](http://ropensci.org)
+[![rofooter](https://ropensci.org/public_images/github_footer.png)](https://ropensci.org)
+
+[coc]: https://github.com/ropensci/originr/blob/master/CODE_OF_CONDUCT.md

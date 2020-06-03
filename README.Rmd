@@ -21,11 +21,11 @@ Species Origin Data
 
 Data sources:
 
-* Encyclopedia of Life <http://eol.org>
-* Flora Europaea <http://rbg-web2.rbge.org.uk/FE/fe.html>
-* Global Invasive Species Database <http://www.iucngisd.org/gisd>
-* Native Species Resolver <http://bien.nceas.ucsb.edu/bien/tools/nsr/nsr-ws/>
-* Integrated Taxonomic Information Service <http://www.itis.gov/>
+* Encyclopedia of Life http://eol.org
+* Flora Europaea http://rbg-web2.rbge.org.uk/FE/fe.html
+* Global Invasive Species Database http://www.iucngisd.org/gisd
+* Native Species Resolver http://bien.nceas.ucsb.edu/bien/tools/nsr/nsr-ws/
+* Integrated Taxonomic Information Service http://www.itis.gov/
 * Global Register of Introduced and Invasive Species http://www.griis.org/
 
 ## Install
@@ -39,7 +39,7 @@ install.packages("originr")
 Development version
 
 ```{r eval=FALSE}
-devtools::install_github("ropensci/originr")
+remotes::install_github("ropensci/originr")
 ```
 
 ```{r}
@@ -51,15 +51,15 @@ library("originr")
 Datasets included:
 
 * `gisd100` - 100 of the World's Worst Invasive Alien Species
-(Global Invasive Species Database) <http://eol.org/collections/54500>
-* `gisd` - Global Invasive Species Database 2013 <http://eol.org/collections/54983>
+(Global Invasive Species Database) http://eol.org/collections/54500
+* `gisd` - Global Invasive Species Database 2013 http://eol.org/collections/54983
 * `isc` - Centre for Agriculture and Biosciences International Invasive Species
-Compendium (ISC) <http://eol.org/collections/55180>
+Compendium (ISC) http://eol.org/collections/55180
 * `daisie` - Delivering Alien Invasive Species Inventories for Europe (DAISIE) Species
-List <http://eol.org/collections/55179>
+List http://eol.org/collections/55179
 * `i3n` - IABIN Invasives Information Network (I3N) Species
 http://eol.org/collections/55176
-* `mineps` - Marine Invaders of the NE Pacific Species <http://eol.org/collections/55331>
+* `mineps` - Marine Invaders of the NE Pacific Species http://eol.org/collections/55331
 
 An example using `mineps`
 
@@ -91,6 +91,8 @@ flora_europaea("Lavandula stoechas")
 * Please [report any issues or bugs](https://github.com/ropensci/originr/issues).
 * License: MIT
 * Get citation information for `originr` in R doing `citation(package = 'originr')`
-* Please note that this project is released with a [Contributor Code of Conduct](CODE_OF_CONDUCT.md). By participating in this project you agree to abide by its terms.
+* Please note that this project is released with a [Contributor Code of Conduct][coc]. By participating in this project you agree to abide by its terms.
 
-[![rofooter](http://ropensci.org/public_images/github_footer.png)](http://ropensci.org)
+[![rofooter](https://ropensci.org/public_images/github_footer.png)](https://ropensci.org)
+
+[coc]: https://github.com/ropensci/originr/blob/master/CODE_OF_CONDUCT.md
