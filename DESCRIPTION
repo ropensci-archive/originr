@@ -22,8 +22,8 @@ Encoding: UTF-8
 LazyLoad: yes
 LazyData: yes
 Imports:
-    crul (>= 0.5.2),
-    jsonlite (>= 1.5),
+    crul,
+    jsonlite,
     data.table,
     xml2,
     taxize (>= 0.9.0)
