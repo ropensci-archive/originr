@@ -10,14 +10,14 @@
   "codeRepository": "https://github.com/ropensci/originr",
   "issueTracker": "https://github.com/ropensci/originr/issues",
   "license": "https://spdx.org/licenses/MIT",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "programmingLanguage": {
     "@type": "ComputerLanguage",
     "name": "R",
-    "version": "3.5.0",
+    "version": "4.0.1",
     "url": "https://r-project.org"
   },
-  "runtimePlatform": "R version 3.5.0 (2018-04-23)",
+  "runtimePlatform": "R version 4.0.1 (2020-06-06)",
   "provider": {
     "@id": "https://cran.r-project.org",
     "@type": "Organization",
@@ -39,13 +39,15 @@
       "email": "nacho.bartomeus@gmail.com"
     }
   ],
-  "maintainer": {
-    "@type": "Person",
-    "givenName": "Scott",
-    "familyName": "Chamberlain",
-    "email": "myrmecocystus@gmail.com",
-    "@id": "https://orcid.org/0000-0003-1444-9135"
-  },
+  "maintainer": [
+    {
+      "@type": "Person",
+      "givenName": "Scott",
+      "familyName": "Chamberlain",
+      "email": "myrmecocystus@gmail.com",
+      "@id": "https://orcid.org/0000-0003-1444-9135"
+    }
+  ],
   "softwareSuggestions": [
     {
       "@type": "SoftwareApplication",
@@ -54,21 +56,22 @@
       "provider": {
         "@id": "https://cran.r-project.org",
         "@type": "Organization",
-        "name": "Central R Archive Network (CRAN)",
+        "name": "Comprehensive R Archive Network (CRAN)",
         "url": "https://cran.r-project.org"
-      }
+      },
+      "sameAs": "https://CRAN.R-project.org/package=testthat"
     },
     {
       "@type": "SoftwareApplication",
-      "identifier": "roxygen2",
-      "name": "roxygen2",
-      "version": "6.0.1",
+      "identifier": "vcr",
+      "name": "vcr",
       "provider": {
         "@id": "https://cran.r-project.org",
         "@type": "Organization",
-        "name": "Central R Archive Network (CRAN)",
+        "name": "Comprehensive R Archive Network (CRAN)",
         "url": "https://cran.r-project.org"
-      }
+      },
+      "sameAs": "https://CRAN.R-project.org/package=vcr"
     }
   ],
   "softwareRequirements": [
@@ -76,25 +79,25 @@
       "@type": "SoftwareApplication",
       "identifier": "crul",
       "name": "crul",
-      "version": "0.5.2",
       "provider": {
         "@id": "https://cran.r-project.org",
         "@type": "Organization",
-        "name": "Central R Archive Network (CRAN)",
+        "name": "Comprehensive R Archive Network (CRAN)",
         "url": "https://cran.r-project.org"
-      }
+      },
+      "sameAs": "https://CRAN.R-project.org/package=crul"
     },
     {
       "@type": "SoftwareApplication",
       "identifier": "jsonlite",
       "name": "jsonlite",
-      "version": "1.5",
       "provider": {
         "@id": "https://cran.r-project.org",
         "@type": "Organization",
-        "name": "Central R Archive Network (CRAN)",
+        "name": "Comprehensive R Archive Network (CRAN)",
         "url": "https://cran.r-project.org"
-      }
+      },
+      "sameAs": "https://CRAN.R-project.org/package=jsonlite"
     },
     {
       "@type": "SoftwareApplication",
@@ -103,9 +106,10 @@
       "provider": {
         "@id": "https://cran.r-project.org",
         "@type": "Organization",
-        "name": "Central R Archive Network (CRAN)",
+        "name": "Comprehensive R Archive Network (CRAN)",
         "url": "https://cran.r-project.org"
-      }
+      },
+      "sameAs": "https://CRAN.R-project.org/package=data.table"
     },
     {
       "@type": "SoftwareApplication",
@@ -114,28 +118,34 @@
       "provider": {
         "@id": "https://cran.r-project.org",
         "@type": "Organization",
-        "name": "Central R Archive Network (CRAN)",
+        "name": "Comprehensive R Archive Network (CRAN)",
         "url": "https://cran.r-project.org"
-      }
+      },
+      "sameAs": "https://CRAN.R-project.org/package=xml2"
     },
     {
       "@type": "SoftwareApplication",
       "identifier": "taxize",
       "name": "taxize",
-      "version": "0.9.0",
+      "version": ">= 0.9.0",
       "provider": {
         "@id": "https://cran.r-project.org",
         "@type": "Organization",
-        "name": "Central R Archive Network (CRAN)",
+        "name": "Comprehensive R Archive Network (CRAN)",
         "url": "https://cran.r-project.org"
-      }
+      },
+      "sameAs": "https://CRAN.R-project.org/package=taxize"
     }
   ],
   "contIntegration": "https://travis-ci.org/ropensci/originr",
   "releaseNotes": "https://github.com/ropensci/originr/blob/master/NEWS.md",
   "readme": "https://github.com/ropensci/originr/blob/master/README.md",
-  "fileSize": "22.475KB",
+  "fileSize": "30.353KB",
   "applicationCategory": "Biology",
   "isPartOf": "https://ropensci.org",
-  "keywords": ["species", "native", "invasive", "origin", "web", "API", "eol", "gisd", "nsr", "itis", "griis"]
+  "keywords": ["species", "native", "invasive", "origin", "web", "API", "eol", "gisd", "nsr", "itis", "griis", "rstats", "invasive-species", "flora-europaea", "r", "r-package"],
+  "relatedLink": "https://docs.ropensci.org/originr",
+  "contributor": {},
+  "copyrightHolder": {},
+  "funder": {}
 }

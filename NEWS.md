@@ -1,3 +1,12 @@
+originr 0.4.0
+=============
+
+### MINOR IMPROVEMENTS
+
+* parameter name changed in `taxize::get_tsn()` - fixed accordingly here (#25)
+* now using vcr for test http request caching (#26)
+
+
 originr 0.3.0
 =============
 
