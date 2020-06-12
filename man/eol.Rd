@@ -79,7 +79,7 @@ Options for the dataset parameter are
 \itemize{
 \item all - All datasets
 \item gisd100 - 100 of the World's Worst Invasive Alien Species
-(Global Invasive Species Database) http://eol.org/collections/54500
+(Global Invasive Species Database) https://eol.org/resources/477
 \item gisd - Global Invasive Species Database 2013
 http://eol.org/collections/54983
 \item isc - Centre for Agriculture and Biosciences International Invasive
@@ -124,8 +124,4 @@ eol(name=c('Lymantria dispar','Cygnus olor','Hydrilla verticillata',
 # curl options
 eol(name='Sargassum', dataset='gisd', verbose = TRUE)
 }
-}
-\references{
-See info for each data source at
-\url{http://eol.org/collections/55367/taxa}
 }

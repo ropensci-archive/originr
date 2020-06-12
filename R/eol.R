@@ -47,7 +47,7 @@
 #' 
 #' - all - All datasets
 #' - gisd100 - 100 of the World's Worst Invasive Alien Species
-#'  (Global Invasive Species Database) http://eol.org/collections/54500
+#'  (Global Invasive Species Database) https://eol.org/resources/477
 #' - gisd - Global Invasive Species Database 2013
 #'  http://eol.org/collections/54983
 #' - isc - Centre for Agriculture and Biosciences International Invasive
@@ -71,8 +71,6 @@
 #'
 #' @return A list of data.frame's/strings with results, with each element
 #' named by the input elements to the name parameter.
-#' @references See info for each data source at
-#' \url{http://eol.org/collections/55367/taxa}
 #'
 #' @examples \dontrun{
 #' eol(name='Brassica oleracea', dataset='gisd')
