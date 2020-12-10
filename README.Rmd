@@ -11,7 +11,7 @@ knitr::opts_chunk$set(
 ```
 
 [![cran checks](https://cranchecks.info/badges/worst/originr)](https://cranchecks.info/pkgs/originr)
-
+[![R-check](https://github.com/ropensci/originr/workflows/R-check/badge.svg)](https://github.com/ropensci/originr/actions?query=workflow%3AR-check)
 [![codecov.io](https://codecov.io/github/ropensci/originr/coverage.svg?branch=master)](https://codecov.io/github/ropensci/originr?branch=master)
 [![rstudio mirror downloads](http://cranlogs.r-pkg.org/badges/originr)](https://github.com/r-hub/cranlogs.app)
 [![cran version](http://www.r-pkg.org/badges/version/originr)](https://cran.r-project.org/package=originr)
