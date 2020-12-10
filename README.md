@@ -4,10 +4,9 @@ originr
 
 
 [![cran checks](https://cranchecks.info/badges/worst/originr)](https://cranchecks.info/pkgs/originr)
-[![Build Status](https://travis-ci.org/ropensci/originr.svg?branch=master)](https://travis-ci.org/ropensci/originr)
-[![Build status](https://ci.appveyor.com/api/projects/status/58v02qxbi67lgf0x?svg=true)](https://ci.appveyor.com/project/sckott/originr)
+
 [![codecov.io](https://codecov.io/github/ropensci/originr/coverage.svg?branch=master)](https://codecov.io/github/ropensci/originr?branch=master)
-[![rstudio mirror downloads](http://cranlogs.r-pkg.org/badges/originr)](https://github.com/metacran/cranlogs.app)
+[![rstudio mirror downloads](http://cranlogs.r-pkg.org/badges/originr)](https://github.com/r-hub/cranlogs.app)
 [![cran version](http://www.r-pkg.org/badges/version/originr)](https://cran.r-project.org/package=originr)
 
 Species Origin Data
@@ -72,7 +71,7 @@ eol(name='Ciona intestinalis', dataset='mineps')
 ```r
 nsr("Pinus ponderosa", "United States")
 #>     family genus         species       country state_province county_parish
-#> 1 Pinaceae Pinus Pinus ponderosa United States                             
+#> 1 Pinaceae Pinus Pinus ponderosa United States
 #>   native_status native_status_reason native_status_sources isIntroduced
 #> 1             N     Native to region                                  0
 #>   isCultivated
@@ -137,8 +136,4 @@ flora_europaea("Lavandula stoechas")
 * Please [report any issues or bugs](https://github.com/ropensci/originr/issues).
 * License: MIT
 * Get citation information for `originr` in R doing `citation(package = 'originr')`
-* Please note that this project is released with a [Contributor Code of Conduct][coc]. By participating in this project you agree to abide by its terms.
-
-[![rofooter](https://ropensci.org/public_images/github_footer.png)](https://ropensci.org)
-
-[coc]: https://github.com/ropensci/originr/blob/master/CODE_OF_CONDUCT.md
+* Please note that this package is released with a [Contributor Code of Conduct](https://ropensci.org/code-of-conduct/). By contributing to this project, you agree to abide by its terms.

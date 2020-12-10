@@ -8,14 +8,14 @@ Description: Get species origin data (whether species is native/invasive) from t
     (<https://bien.nceas.ucsb.edu/bien/tools/nsr/>), Integrated Taxonomic
     Information Service (<https://www.itis.gov/>), and Global Register of
     Introduced and Invasive Species (<http://www.griis.org/>).
-Version: 0.4.0
+Version: 0.4.0.91
 Authors@R: c(
     person("Scott", "Chamberlain", role = c("aut", "cre"), 
       email = "myrmecocystus@gmail.com", comment = c(ORCID="0000-0003-1444-9135")),
     person("Ignasi", "Bartomeus", role = "aut", email = "nacho.bartomeus@gmail.com")
     )
 License: MIT + file LICENSE
-URL: https://docs.ropensci.org/originr, https://github.com/ropensci/originr
+URL: https://docs.ropensci.org/originr/, https://github.com/ropensci/originr
 BugReports: https://github.com/ropensci/originr/issues
 Roxygen: list(markdown = TRUE)
 Encoding: UTF-8
